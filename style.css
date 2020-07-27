@@ -1,3 +1,26 @@
+html {
+  scroll-behavior: smooth;
+}
+.navbar{
+  background-color: #6f4925;
+  -webkit-box-shadow: 0px 11px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 11px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 11px 12px 0px rgba(0,0,0,0.75);
+}
+.navbar-brand img{
+  height: 2rem;
+width: auto;
+}
+.dropdown-menu a{
+  color: black!important;
+}
+.navbar a{
+color:white;
+}
+.hero{
+  margin-top: 6vh!important;
+  min-height: 50vh;
+}
 .card{
   min-width: 22rem!important;
   margin: 1rem;
@@ -12,4 +35,31 @@
   color:#6f4925;
   background-color:#fff3d1;
   border-color:  #2d190b;
+}
+.info .fas{
+  font-size: 2.5rem;
+  background-color: #2d190b;
+  color: transparent;
+  text-shadow: 0px 3px 1px rgba(255, 255, 255, 0.87);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+}
+.info span{
+  font-size: 1.2rem;
+  font-weight: bold;
+  
+  background-color: #2d190b;
+  color: transparent;
+  text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.87);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+}
+.info ul li{
+  background-color: #6f4925;
+  box-shadow: 0px 2px 3px #2d190b;
+}
+#inputState{
+  width: fit-content;
 }

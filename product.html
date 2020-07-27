@@ -21,7 +21,7 @@
 
         <!--nav-menu-->
         <nav class="navbar navbar-expand-lg fixed-top px-5">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="/images/logo.svg" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="index.html">Accueil <span class="sr-only">(current)</span></a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,74 +57,29 @@
 
     </header><!-- End Header -->
 
-    <main id="main">
-
-        <section class="hero d-flex flex-column justify-content-between py-5 mx-auto text-center bg-dark">
-            <h1 class="mx-auto">Bienvenue sur Orinours !</h1>
-            <p class="col-md-6 mx-auto">Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne
-                lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger
-                omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra
-                adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks
-                terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi
-                tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus
-                putrid voodoo horror. Nigh tofth eliv.</p>
-        </section>
-        <section class="info col-md-8 mx-auto my-5 py-5">
-            <ul class="list-unstyled d-flex flex-wrap justify-content-between text-center">
-                <li class="warranty col-6 col-md-2 rounded-circle py-5">
-                    <i class="fas fa-heart mb-3"></i><br>
-                    <span>Garantis à vie</span>
-                </li>
-                <li class="handmade col-6 col-md-2 rounded-circle py-5">
-                    <i class="fas fa-hand-holding-heart mb-3"></i><br>
-                    <span>Faits  à la main et avec amour</span>
-                </li>
-                <li class="gifts col-6 col-md-2 rounded-circle py-5">
-                    <i class="fas fa-gifts mb-3"></i><br>
-                    <span>Cadeaux personnalisés</span>
-                </li>
-                <li class="delivery col-6 col-md-2 rounded-circle py-5">
-                    <i class="fas fa-truck mb-3"></i><br>
-                    <span>Livraison rapide</span>
-                </li>
-            </ul>
-        </section>
-        <section id="teddiesCards" class="col-10 d-flex flex-wrap justify-content-around pt-5 mx-auto text-center">
-            <!-- Cartes contenant les liens vers les pages d'oursons créés dynamiquement -->
-        </section>
-
-        <!-- ======= Clients Section ======= -->
-        <section id="clients" class="clients">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>AVIS CLIENTS</h2>
-                    <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata
-                        corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead
-                        survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra
-                        adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse.</p>
+    <main id="main" class="mt-5 pt-5">
+        <div class="card d-flex flex-row col-md-8 mx-auto">
+            <div class="col-6">
+                <img class="col-12" id="product-picture" />
+            </div>
+            <div class="details col-6 align-self-center">
+                <h1 id="product-title"></h1>
+                <p id="product-description"></p>
+                <h4 id="price"></h4>
+                <h5 class="colors">Couleurs :</h5>
+                <select id="inputState" class="form-control my-2"></select>
+                <div class="action">
+                    <button class="add-to-cart btn btn-default" type="button">Ajouter au panier</button>
                 </div>
             </div>
-        </section><!-- End Clients Section -->
+        </div>
+
+
 
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="container row mx-auto">
-            <div class="col-lg-6">
-                <h4>Our Newsletter</h4>
-                <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata
-                    corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead
-                    survivor dictum.</p>
-            </div>
-            <div class="col-lg-6">
-                <form action="" method="post">
-                    <input type="email" name="email"><input type="submit" value="Subscribe">
-                </form>
-            </div>
-        </div>
-
         <div class="footer footer-top bg-dark text-white">
             <div class="container d-flex mx-auto justify-content-between">
                 <div class="col-lg-3 col-md-6 footer-links">
@@ -182,7 +137,7 @@
     </script>
     <script src="js/api.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/product.js"></script>
 </body>
 
 </html>

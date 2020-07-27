@@ -1,8 +1,3 @@
-var APITeddies = "http://localhost:3000/api/teddies";
-async function products(url) {
-    let result = await fetch(url);
-    return result.json();
-}
 products(APITeddies).then(teddies => {
     console.log(teddies);
     teddies.forEach(teddy => {
@@ -10,6 +5,8 @@ products(APITeddies).then(teddies => {
         console.log(teddy.name)
 
         const teddiesCards = document.getElementById('teddiesCards');
+        const teddiesNav = document.getElementById('nav-teddies');
+
         //création d'une carte pour chaque produit
         let teddyCard = document.createElement('div');
         teddyCard.classList.add('card');
@@ -27,7 +24,7 @@ products(APITeddies).then(teddies => {
         teddyInnerDescription.classList.add('card-text');
         teddyInnerDescription.innerText = teddy.description;
         let teddyLink = document.createElement('a');
-        teddyLink.href = "/" + teddy.name;
+        teddyLink.href = "product.html?id=" + teddy._id;
         teddyLink.classList.add('btn');
         teddyLink.classList.add('btn-primary');
         teddyLink.innerHTML = '<i class="fas fa-paw"></i>  En savoir plus sur ' + teddy.name + '  <i class="fas fa-paw"></i>';
@@ -39,6 +36,5 @@ products(APITeddies).then(teddies => {
         teddyInnerCard.appendChild(teddyInnerTitle);
         teddyInnerCard.appendChild(teddyInnerDescription);
         teddyInnerCard.appendChild(teddyLink);
-
     })
 });
