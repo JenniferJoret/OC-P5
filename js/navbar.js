@@ -11,8 +11,6 @@ products(APITeddies).then(teddies => {
         teddyLi.appendChild(teddyLiLink);
     })
 });
-
-//Quantité panier
 if (localStorage.cartItems) {
     cartAmount = document.getElementById('cart-amount');
     let cartItems = JSON.parse(localStorage.cartItems);

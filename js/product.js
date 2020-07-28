@@ -45,46 +45,46 @@ products(APITeddies).then(teddy => {
         let product = {
             id: teddy._id,
             name: teddy.name,
-            quantity: qte.value,
-            price: productPrice.innerText,
+            quantity: parseInt(qte.value),
+            price: (teddy.price * qte.value) / 100,
             color: itemColor
         };
+
         if (qte.value > 0) {
             //Si il y a déjà des objets dans le panier on récupère les données, on les met à jour et on les réimplante 
             if (localStorage.cartItems) {
-                let cartItems = JSON.parse(localStorage.cartItems);
-                cartItems.push(product);
+                const cartItems = JSON.parse(localStorage.cartItems);
+                //Si un objet avec le même ID, et la même couleur est présent, on ajoute les nouveaux éléments à ceux déjà présents dans le tableau
+                let i = 0;
+                let isInArray = false;
+                while (i < cartItems.length) {
+                    if (cartItems[i].id == product.id && cartItems[i].color == product.color) {
+                        cartItems[i].quantity = cartItems[i].quantity + product.quantity;
+                        cartItems[i].price = cartItems[i].price + product.price;
+                        isInArray = true;
+                        break;
+                    } 
+                    i++;
+                }
+                if (isInArray == false){
+                    cartItems.push(product);
+                }
+                //et on envoie en storage;
                 localStorage.setItem("cartItems", JSON.stringify(cartItems));
             } else {
                 //Sinon, on crée le tableau du storage
                 localStorage.setItem("cartItems", JSON.stringify([product]));
-            };
-            //message d'information lorsque l'article a été ajouté
-            addToCart.innerText = teddy.name + " a été ajouté au panier !";
-            addToCart.classList.add('disabled', 'bg-success');
-            //On attend deux secondes, puis on redonne accès au bouton
-            setTimeout(function () {
-                addToCart.innerText = "Ajouter au panier"
-                addToCart.classList.remove('disabled', 'bg-success');
-            }, 2000);
-        } else {
-            //message d'information si erreur
-            addToCart.innerText = "Votre demande n'a pas pu être traitée";
-            addToCart.classList.add('disabled', 'bg-danger');
+            }
         };
+        if (localStorage.cartItems) {
+            cartAmount = document.getElementById('cart-amount');
+            let cartItems = JSON.parse(localStorage.cartItems);
+            console.log(cartItems);
+            let qteAmount = 0;
+            cartItems.forEach(cartItem => {
+                qteAmount = qteAmount + parseInt(cartItem.quantity);
+            })
+            cartAmount.innerText = qteAmount;
+        }
     });
-    
 })
-
-
-//Total des commandes
-// if (localStorage.cartItems) {
-//     cartAmount = document.getElementById('cartAmount');
-//     let cartItems = JSON.parse(localStorage.cartItems);
-//     console.log(cartItems);
-//     let test = 0;
-//     cartItems.forEach(cartItem => {
-//         test = test + parseInt(cartItem.price);
-//     })
-//     console.log(test);
-// }
