@@ -1,8 +1,5 @@
 products(APITeddies).then(teddies => {
-    console.log(teddies);
     teddies.forEach(teddy => {
-        console.log(teddy)
-        console.log(teddy.name)
 
         const teddiesCards = document.getElementById('teddiesCards');
         const teddiesNav = document.getElementById('nav-teddies');
