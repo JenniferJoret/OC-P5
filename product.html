@@ -14,13 +14,14 @@
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
 
-<body>
-    <!-- ======= Header ======= -->
-    <header id="header">
-
-
+<body  id="content" class="wrapper d-flex flex-column m-0">
         <!--nav-menu-->
-        <nav class="navbar navbar-expand-lg fixed-top px-5">
+        <nav class="navbar navbar-expand-lg fixed-top px-5" id="nav">
+            <div id="sidebarCollapse" class="col-xl-1 col-2 order-1 d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-light side-menu-btn d-flex px-2">
+                    Panier <i class="fas fa-shopping-basket"></i><span id="cart-amount"></span>
+                </button>
+            </div>
             <a class="navbar-brand" href="index.html">
                 <img src="/images/logo.svg" alt="">
             </a>
@@ -28,18 +29,18 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" href="index.html">Accueil <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Nos créations
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
+    
                             <ul class="list-unstyled" id="nav-teddies">
                                 <!-- Liens vers les pages d'oursons créés dynamiquement -->
                             </ul>
@@ -47,17 +48,19 @@
                             <a class="dropdown-item" href="index.html#teddiesCards">Tous nos oursons</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Panier <i class="fas fa-shopping-basket"></i><span id="cart-amount"></span></a>
-                    </li>
                 </ul>
             </div>
         </nav>
         <!--End nav-menu -->
+        <nav id="sidebar">
+            <div class="sidebar-header h4 font-weight-bold p-4 mt-4 text-center">
+                <a class="cart" href="#">Panier</a>
+            </div>
+            <div id="cart-content"></div>
+        </nav>
+        <!--End nav-menu -->
 
-    </header><!-- End Header -->
-
-    <main id="main" class="mt-5 pt-5">
+    <main id="main" class=" mt-5 pt-5">
         <div class="card d-flex flex-row col-md-8 mx-auto">
             <div class="col-6">
                 <img class="col-12" id="product-picture" />

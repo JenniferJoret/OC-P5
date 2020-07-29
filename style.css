@@ -1,65 +1,183 @@
+:root{
+  --darkBrown : #2d190b;
+  --lightBrown : #6f4925;
+  --beige : #fff3d1;
+}
+
 html {
   scroll-behavior: smooth;
 }
-.navbar{
-  background-color: #6f4925;
-  -webkit-box-shadow: 0px 11px 12px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 11px 12px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 11px 12px 0px rgba(0,0,0,0.75);
+
+.navbar {
+  background-color: var(--lightBrown);
+  -webkit-box-shadow: 0px 11px 12px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 11px 12px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 11px 12px 0px rgba(0, 0, 0, 0.75);
 }
-.navbar-brand img{
+
+.navbar-brand img {
   height: 2rem;
-width: auto;
+  width: auto;
 }
-.dropdown-menu a{
-  color: black!important;
+
+.dropdown-menu a {
+  color: black !important;
 }
-.navbar a{
-color:white;
+
+.navbar a {
+  color: white;
 }
-.hero{
-  margin-top: 6vh!important;
+
+.hero {
+  margin-top: 6vh !important;
   min-height: 50vh;
 }
-.card{
-  min-width: 22rem!important;
+
+.card {
+  min-width: 22rem !important;
   margin: 1rem;
   padding: 1rem;
 }
+
 .btn-primary {
-  background-color: #6f4925;
-  color: #fff3d1;
-  border-color: #2d190b;
+  background-color: var(--lightBrown);
+  color: var(--beige);
+  border-color: var(--darkBrown);
 }
+
 .btn-primary:hover {
-  color:#6f4925;
-  background-color:#fff3d1;
-  border-color:  #2d190b;
+  color: var(--lightBrown);
+  background-color: var(--beige);
+  border-color: var(--darkBrown);
 }
-.info .fas{
+
+.info .fas {
   font-size: 2.5rem;
-  background-color: #2d190b;
+  background-color: var(--darkBrown);
   color: transparent;
   text-shadow: 0px 3px 1px rgba(255, 255, 255, 0.87);
   -webkit-background-clip: text;
-     -moz-background-clip: text;
-          background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 }
-.info span{
+
+.info span {
   font-size: 1.2rem;
   font-weight: bold;
-  
-  background-color: #2d190b;
+
+  background-color: var(--darkBrown);
   color: transparent;
   text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.87);
   -webkit-background-clip: text;
-     -moz-background-clip: text;
-          background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
 }
-.info ul li{
-  background-color: #6f4925;
-  box-shadow: 0px 2px 3px #2d190b;
+
+.info ul li {
+  background-color: var(--lightBrown);
+  box-shadow: 0px 2px 3px var(--darkBrown);
 }
-#inputState{
+
+#inputState {
   width: fit-content;
+}
+
+
+
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#content.active {
+  width: calc(100% - 15vw);
+}
+
+/*--------------------------SIDEBAR---------------------------*/
+
+#sidebar {
+  z-index: 1000;
+  right: 0;
+  margin-right: -15vw;
+  min-width: 15vw;
+  max-width: 15vw;
+  background: var(--lightBrown);
+  color: white;
+  position: fixed;
+  height: 100vh;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  overflow: auto;
+}
+
+#sidebar.active {
+  margin-right: 0vw;
+  -webkit-box-shadow: 5px 0px 20px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 0px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 1200px) {
+
+  #sidebar {
+    margin-right: -25vw;
+    min-width: 25vw;
+    max-width: 25vw;
+  }
+
+  #content.active {
+    width: calc(100% - 25vw);
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 992px) {
+  #sidebar {
+    margin-right: -35vw;
+    min-width: 35vw;
+    max-width: 35vw;
+  }
+
+  #content.active {
+    width: calc(100% - 35vw);
+  }
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-right: -40vw;
+    min-width: 40vw;
+    max-width: 40vw;
+  }
+
+  #content.active {
+    width: calc(100% - 40vw);
+  }
+}
+
+@media (max-width: 576px) {
+  #sidebar {
+    margin-right: -100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+  }
+
+  #content.active {
+    width: calc(100% - 100vw);
+    overflow: hidden;
+  }
 }

@@ -35,3 +35,11 @@ products(APITeddies).then(teddies => {
         teddyInnerCard.appendChild(teddyLink);
     })
 });
+
+
+
+
+
+
+
+

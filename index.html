@@ -14,60 +14,66 @@
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
 
-<body>
-    <!-- ======= Header ======= -->
-    <header id="header">
-
-
-        <!--nav-menu-->
-        <nav class="navbar navbar-expand-lg fixed-top px-5">
-            <a class="navbar-brand" href="#">
-                <img src="/images/logo.svg" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<body id="content" class="wrapper d-flex flex-column m-0">
+    <!-- Page Content  -->
+    <nav class="navbar navbar-expand-lg fixed-top px-5" id="nav">
+        <div id="sidebarCollapse" class="col-xl-1 col-2 order-1 d-flex justify-content-center">
+            <button type="button" class="btn btn-outline-light side-menu-btn d-flex px-2">
+                Panier <i class="fas fa-shopping-basket"></i><span id="cart-amount"></span>
             </button>
+        </div>
+        <a class="navbar-brand" href="#">
+            <img src="/images/logo.svg" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Nos créations
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Nos créations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            <ul class="list-unstyled" id="nav-teddies">
-                                <!-- Liens vers les pages d'oursons créés dynamiquement -->
-                            </ul>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="index.html#teddiesCards">Tous nos oursons</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Panier <i class="fas fa-shopping-basket"></i><span id="cart-amount"></span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!--End nav-menu -->
-
-    </header><!-- End Header -->
+                        <ul class="list-unstyled" id="nav-teddies">
+                            <!-- Liens vers les pages d'oursons créés dynamiquement -->
+                        </ul>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="index.html#teddiesCards">Tous nos oursons</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--End nav-menu -->
+    <nav id="sidebar">
+        <div class="sidebar-header h4 font-weight-bold p-4 mt-4 text-center">
+            <a class="cart" href="#">Panier</a>
+        </div>
+        <div id="cart-content"></div>
+    </nav>
+    <!--End Header -->
 
     <main id="main">
-
         <section class="hero d-flex flex-column justify-content-between py-5 mx-auto text-center bg-dark">
             <h1 class="mx-auto">Bienvenue sur Orinours !</h1>
-            <p class="col-md-6 mx-auto">Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne
-                lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger
-                omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra
-                adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks
-                terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi
-                tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus
-                putrid voodoo horror. Nigh tofth eliv.</p>
+            <p class="col-md-6 mx-auto">Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De
+                carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi
+                gorger
+                omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking
+                monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat
+                max
+                brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem
+                virus.
+                Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies.
+                Sicut
+                malus putrid voodoo horror. Nigh tofth eliv.</p>
         </section>
         <section class="info col-md-8 mx-auto my-5 py-5">
             <ul class="list-unstyled d-flex flex-wrap justify-content-between text-center">
@@ -77,7 +83,7 @@
                 </li>
                 <li class="handmade col-6 col-md-2 rounded-circle py-5">
                     <i class="fas fa-hand-holding-heart mb-3"></i><br>
-                    <span>Faits  à la main et avec amour</span>
+                    <span>Faits à la main et avec amour</span>
                 </li>
                 <li class="gifts col-6 col-md-2 rounded-circle py-5">
                     <i class="fas fa-gifts mb-3"></i><br>
@@ -99,32 +105,21 @@
 
                 <div class="section-title">
                     <h2>AVIS CLIENTS</h2>
-                    <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata
-                        corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead
+                    <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering
+                        animata
+                        corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero
+                        undead
                         survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra
                         adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse.</p>
                 </div>
             </div>
         </section><!-- End Clients Section -->
 
-    </main><!-- End #main -->
+    </main>
+    <!--End #main -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="container row mx-auto">
-            <div class="col-lg-6">
-                <h4>Our Newsletter</h4>
-                <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata
-                    corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead
-                    survivor dictum.</p>
-            </div>
-            <div class="col-lg-6">
-                <form action="" method="post">
-                    <input type="email" name="email"><input type="submit" value="Subscribe">
-                </form>
-            </div>
-        </div>
-
         <div class="footer footer-top bg-dark text-white">
             <div class="container d-flex mx-auto justify-content-between">
                 <div class="col-lg-3 col-md-6 footer-links">
@@ -152,8 +147,10 @@
 
                 <div class="col-lg-3 col-md-6 footer-info">
                     <h3>À propos de nous</h3>
-                    <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata
-                        corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead
+                    <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering
+                        animata
+                        corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero
+                        undead
                         survivor dictum.</p>
                     <div class="social-links mt-3">
                         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -166,9 +163,8 @@
 
             </div>
         </div>
-    </footer><!-- End Footer -->
-
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    </footer>
+    <!--End Footer -->
 
     <!-- Vendor JS Files -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -180,7 +176,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-    <script src="js/api.js"></script>    
+    <script src="js/api.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/index.js"></script>
 </body>
