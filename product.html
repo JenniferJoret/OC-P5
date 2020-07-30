@@ -14,51 +14,51 @@
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
 </head>
 
-<body  id="content" class="wrapper d-flex flex-column m-0">
-        <!--nav-menu-->
-        <nav class="navbar navbar-expand-lg fixed-top px-5" id="nav">
-            <div id="sidebarCollapse" class="col-xl-1 col-2 order-1 d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-light side-menu-btn d-flex px-2">
-                    Panier <i class="fas fa-shopping-basket"></i><span id="cart-amount"></span>
-                </button>
-            </div>
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo.svg" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<body id="content" class="wrapper d-flex flex-column m-0">
+    <!--nav-menu-->
+    <nav class="navbar navbar-expand-lg fixed-top px-5" id="nav">
+        <div id="sidebarCollapse" class="col-xl-1 col-2 order-1 d-flex justify-content-center">
+            <button type="button" class="btn btn-outline-light side-menu-btn d-flex px-2">
+                Panier <i class="fas fa-shopping-basket"></i><span id="cart-amount"></span>
             </button>
-    
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Nos créations
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    
-                            <ul class="list-unstyled" id="nav-teddies">
-                                <!-- Liens vers les pages d'oursons créés dynamiquement -->
-                            </ul>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="index.html#teddiesCards">Tous nos oursons</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!--End nav-menu -->
-        <nav id="sidebar">
-            <div class="sidebar-header h4 font-weight-bold p-4 mt-4 text-center">
-                <a class="cart" href="#">Panier</a>
-            </div>
-            <div id="cart-content"></div>
-        </nav>
-        <!--End nav-menu -->
+        </div>
+        <a class="navbar-brand" href="index.html">
+            <img src="/images/logo.svg" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Nos créations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <ul class="list-unstyled" id="nav-teddies">
+                            <!-- Liens vers les pages d'oursons créés dynamiquement -->
+                        </ul>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="index.html#teddiesCards">Tous nos oursons</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--End nav-menu -->
+    <nav id="sidebar">
+        <div class="sidebar-header h4 font-weight-bold p-4 mt-4 text-center">
+            <a class="cart" href="#">Panier</a>
+        </div>
+        <div id="cart-content"></div>
+    </nav>
+    <!--End nav-menu -->
 
     <main id="main" class=" mt-5 pt-5">
         <div class="card d-flex flex-row col-md-8 mx-auto">
@@ -68,12 +68,21 @@
             <div class="details col-6 align-self-center">
                 <h1 id="product-title"></h1>
                 <p id="product-description"></p>
-        <input id="quantity" class="quantity" min="1" max="20" name="quantity" value="1" type="number">
-                <h4 id="price"></h4>
-                <h5 class="colors">Couleur(s) disponible(s) :</h5>
-                <select id="inputState" class="form-control my-2"></select>
+                <div class="d-flex align-items-start">
+                    <h5 class="colors">Quantité :</h5>
+                    <input id="quantity" class="quantity ml-4 border-0" min="1" max="20" name="quantity" value="1"
+                        type="number">
+                </div>
+                <div class="d-flex align-items-end">
+                    <h5 class="colors">Couleur(s) disponible(s) :</h5>
+                    <select id="inputState" class="form-control ml-4 border-0"></select>
+                </div>
+                <h4 id="price" class="my-4"></h4>
                 <div class="action">
-                    <button id="add-to-cart" class="add-to-cart btn btn-default" type="button">Ajouter au panier</button>
+                    <button id="add-to-cart" class="add-to-cart btn btn-default" type="button">Ajouter au
+                        panier</button>
+                </div>
+                <div class="alert alert-success text-center mt-3 d-none" id="alert-success">
                 </div>
             </div>
         </div>

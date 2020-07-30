@@ -75,6 +75,14 @@ products(APITeddies).then(teddy => {
                 //Sinon, on crée le tableau du storage
                 localStorage.setItem("cartItems", JSON.stringify([product]));
             }
+            const alertSuccess = document.getElementById('alert-success');
+            alertSuccess.textContent = product.name + " a bien été ajouté au panier !";
+            alertSuccess.classList.remove('d-none');
+            alertSuccess.classList.add('d-block');
+            setTimeout(function(){ 
+                alertSuccess.classList.remove('d-block');
+                alertSuccess.classList.add('d-none'); 
+            }, 3000);
         };
         if (localStorage.cartItems) {
             cartAmount = document.getElementById('cart-amount');

@@ -31,7 +31,7 @@ if (localStorage.cartItems) {
         total = total + parseInt(cartItem.price);
         //création des éléments du panier en side
         let productUl = document.createElement("ul");
-        productUl.classList.add('list-unstyled', 'mx-1');
+        productUl.classList.add('list-unstyled', 'mx-1', 'px-4');
         let productLi = document.createElement('li');
         productLi.classList.add('d-flex', 'justify-content-between');
         let productLiLink = document.createElement('a');
@@ -49,6 +49,7 @@ if (localStorage.cartItems) {
     totalPrice.classList.add('text-center', 'h4', 'py-4');
     totalPrice.innerText = "Total : " + total + " €";
     cartContent.appendChild(totalPrice);
+    
 } else {
 let emptyCart = document.createElement('h4');
 emptyCart.classList.add('text-center');
