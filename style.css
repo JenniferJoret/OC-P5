@@ -1,17 +1,54 @@
-:root{
-  --darkBrown : #2d190b;
-  --lightBrown : #6f4925;
-  --beige : #fff3d1;
+:root {
+  --darkBrown: #2d190b;
+  --lightBrown: #6f4925;
+  --beige: #f4b46d;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {  
-   opacity: 1;
+body {
+  margin: 0;
+  font-family: 'Coming Soon', cursive;
 }
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#content.active {
+  width: calc(100% - 15vw);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.w-content {
+  width: fit-content;
+}
+
+.btn-primary {
+  background-color: var(--lightBrown);
+  color: beige;
+  border-color: var(--darkBrown);
+}
+
+.btn-primary:hover {
+  color: var(--lightBrown);
+  background-color: beige;
+  border-color: var(--darkBrown);
+}
+/*-----------------------------*/
 .navbar {
   background-color: var(--lightBrown);
   -webkit-box-shadow: 0px 11px 12px 0px rgba(0, 0, 0, 0.75);
@@ -29,85 +66,17 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .navbar a {
-  color: white;
-}
-
-.hero {
-  margin-top: 6vh !important;
-  min-height: 50vh;
-}
-
-.card {
-  min-width: 22rem !important;
-  margin: 1rem;
-  padding: 1rem;
-}
-
-.btn-primary {
-  background-color: var(--lightBrown);
-  color: var(--beige);
-  border-color: var(--darkBrown);
-}
-
-.btn-primary:hover {
-  color: var(--lightBrown);
-  background-color: var(--beige);
-  border-color: var(--darkBrown);
-}
-
-.info .fas {
-  font-size: 2.5rem;
-  background-color: var(--darkBrown);
-  color: transparent;
-  text-shadow: 0px 3px 1px rgba(255, 255, 255, 0.87);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-}
-
-.info span {
-  font-size: 1.2rem;
+  color: var(--darkBrown);
   font-weight: bold;
-
-  background-color: var(--darkBrown);
-  color: transparent;
-  text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.87);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
 }
 
-.info ul li {
-  background-color: var(--lightBrown);
-  box-shadow: 0px 2px 3px var(--darkBrown);
+.fa-shopping-cart {
+  font-size: 1.2em;
 }
-
-#inputState {
-  width: fit-content;
-}
-
-
-
-
-
 
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
-
-#content {
-  width: 100%;
-  min-height: 100vh;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#content.active {
-  width: calc(100% - 15vw);
-}
 
 /*--------------------------SIDEBAR---------------------------*/
 
@@ -123,13 +92,133 @@ input[type=number]::-webkit-outer-spin-button {
   height: 100vh;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  overflow: auto;
+  overflow-y: visible;
+}
+
+#sidebar a {
+  color: white;
+}
+
+#sidebar a:hover {
+  color: var(--beige);
 }
 
 #sidebar.active {
   margin-right: 0vw;
   -webkit-box-shadow: 5px 0px 20px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 5px 0px 20px 0px rgba(0, 0, 0, 0.75);
+}
+
+#cart-teddy {
+  position: fixed;
+  top: 7vh;
+  right: 0vw;
+  height: 200px;
+  transform-origin: 100% 100%;
+  transform: rotate(0.25turn);
+  transition: all 0.3s;
+  z-index: 0;
+}
+
+#cart-teddy.active {
+  transition: all 1s ease;
+  right: 14.4vw;
+  transform: rotate(0.0turn);
+  z-index: 1000;
+}
+
+/*---------------------------*/
+
+.hero {
+  min-height: 100vh;
+  background: url(images/teddy.jpg);
+  background-position: left;
+  background-attachment: fixed;
+  color: beige;
+  background-size: cover;
+}
+
+.hero-layer {
+  min-height: 100vh;
+  background-color: rgba(82, 82, 82, 0.5);
+}
+
+.hero-text {
+  min-height: 90vh;
+  justify-content: space-around;
+}
+/*-----------------------------------*/
+.info{
+  border: 25px solid black;
+  border-image: url("/images/0.jpg") 100;
+}
+.info .fas {
+  font-size: 2.5rem;
+  background-color: var(--darkBrown);
+  color: transparent;
+  text-shadow: 0px 3px 1px rgba(255, 255, 255, 0.87);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+
+.info span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: var(--darkBrown);
+  color: transparent;
+  text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.87);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+
+.info ul li {
+  background-color: var(--lightBrown);
+  box-shadow: 0px 2px 3px var(--darkBrown);
+  padding: 2em;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+/*--------------------------------------*/
+.nos-oursons{
+  font-size: 3em;
+}
+.products{
+  background: url(images/bg-teddy-1.jpg);
+  background-attachment: fixed;
+  background-size: contain;
+  background-size: cover;
+}
+.card {
+  min-width: 20%;
+  margin: 1rem;
+  padding: 1rem;
+}
+#inputState {
+  width: fit-content;
+}
+/*-------------------------*/
+.product-detail{
+  background: url(images/product-bg.jpg)left;
+}
+.product-detail .card {
+  height: fit-content;
+  align-self: center;
+}
+/*--------------------------*/
+.cart-content-detail{
+background: url(images/cart-bg.jpg) right;
+}
+#footer {
+  background-color: var(--lightBrown);
+  -webkit-box-shadow: 0px -11px 12px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px -11px 12px 0px rgba(0,0,0,0.75);
+box-shadow: 0px -11px 12px 0px rgba(0,0,0,0.75);
 }
 
 /* ---------------------------------------------------
@@ -147,6 +236,10 @@ input[type=number]::-webkit-outer-spin-button {
     width: calc(100% - 25vw);
     overflow: hidden;
   }
+  
+  #cart-teddy.active {
+    right: 23.8vw;
+  }
 }
 
 @media (max-width: 992px) {
@@ -158,6 +251,9 @@ input[type=number]::-webkit-outer-spin-button {
 
   #content.active {
     width: calc(100% - 35vw);
+  }
+  #cart-teddy.active {
+    right: 33.8vw;
   }
 }
 
@@ -171,6 +267,9 @@ input[type=number]::-webkit-outer-spin-button {
   #content.active {
     width: calc(100% - 40vw);
   }
+  #cart-teddy.active {
+    right: 38.5vw;
+  }
 }
 
 @media (max-width: 576px) {
@@ -183,5 +282,8 @@ input[type=number]::-webkit-outer-spin-button {
   #content.active {
     width: calc(100% - 100vw);
     overflow: hidden;
+  }
+  #cart-teddy.active {
+    display: none;
   }
 }

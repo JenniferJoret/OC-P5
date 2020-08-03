@@ -35,10 +35,11 @@ if (localStorage.cartItems) {
         let productLi = document.createElement('li');
         productLi.classList.add('d-flex', 'justify-content-between');
         let productLiLink = document.createElement('a');
-        let productPrice = document.createElement("span");
         productLiLink.href = "product.html?id=" + cartItem.id;
         productLiLink.innerText = cartItem.quantity + " " + cartItem.name + " - " + cartItem.color;
+        let productPrice = document.createElement("span");
         productPrice.innerText = cartItem.price + " €";
+
 
         cartContent.appendChild(productUl);
         productUl.appendChild(productLi);
@@ -48,40 +49,44 @@ if (localStorage.cartItems) {
     let totalPrice = document.createElement('p');
     totalPrice.classList.add('text-center', 'h4', 'py-4');
     totalPrice.innerText = "Total : " + total + " €";
+    let cartButton = document.createElement('a');
+    cartButton.classList.add('btn', 'btn-outline-light', 'd-flex', 'px-2', 'mx-auto', 'w-content');
+    cartButton.href = "cart.html";
+    cartButton.innerText = "Voir le détail du panier";
     cartContent.appendChild(totalPrice);
-    
+    cartContent.appendChild(cartButton);
+
 } else {
-let emptyCart = document.createElement('h4');
-emptyCart.classList.add('text-center');
-emptyCart.innerText = "Votre panier est vide !"
-cartContent.appendChild(emptyCart);
+    cartIsEmpty(cartContent);
 }
 
 $(document).ready(function () {
     //afficher et masquer la sidebar
     $(function () {
         $("#sidebarCollapse").on("click", function (e) {
-            $('#sidebar, #content').toggleClass('active');
+            $('#sidebar, #content, #footer, #cart-teddy').toggleClass('active');
             $('.collapse.in').toggleClass('in');
             $("#nav").find('.collapse.show').collapse('hide');
             e.stopPropagation();
         });
         $(document).on("click", function (e) {
             if ($(e.target).is("#sidebar *") === false) {
-                $('#sidebar, #content').removeClass('active');
+                $('#sidebar, #content ,#footer, #cart-teddy').removeClass('active');
             }
         });
     });
 
-
-    //fermer les dropdowns Ã  l'ouverture d'un autre
-    $(document).on('show.bs.collapse', '.collapse', function () {
-        $(document).find('.collapse.show').collapse('hide');
-    });
-
     //margin du content en fonction de la taille de la navbar
     var heightContent = $('#nav').height();
-    $('#sidebar, #header').css({
+    $('#sidebar, #main').css({
         marginTop: heightContent
     });
+    //le main remplira toujours l'espace disponible
+    function autoResizeDiv() {
+        var heightFooter = $('#footer').height();
+        document.getElementById('main').style.minHeight = (window.innerHeight - heightFooter - heightContent) + 'px';
+    }
+    window.onresize = autoResizeDiv;
+    autoResizeDiv();
+
 });

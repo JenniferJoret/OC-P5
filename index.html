@@ -12,24 +12,27 @@
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
         integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Nanum+Pen+Script&family=Sacramento&display=swap"
+        rel="stylesheet">
 </head>
 
 <body id="content" class="wrapper d-flex flex-column m-0">
     <!-- Page Content  -->
-    <nav class="navbar navbar-expand-lg fixed-top px-5" id="nav">
-        <div id="sidebarCollapse" class="col-xl-1 col-2 order-1 d-flex justify-content-center">
-            <button type="button" class="btn btn-outline-light side-menu-btn d-flex px-2">
-                Panier <i class="fas fa-shopping-basket"></i><span id="cart-amount"></span>
-            </button>
-        </div>
-        <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-lg fixed-top px-0 px-md-5" id="nav">
+        <button class="d-lg-none btn btn-outline-light px-2" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-paw"></i> Menu
+        </button>
+        <a class="navbar-brand m-0" href="index.html">
             <img src="/images/logo.svg" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
+        <div id="sidebarCollapse" class="d-flex justify-content-center order-lg-1 ml-lg-2">
+            <button type="button" class="btn btn-outline-light side-menu-btn px-2">
+                <i class="fas fa-shopping-cart pr-2"></i><span id="cart-amount">0</span>
+            </button>
+        </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
@@ -45,108 +48,102 @@
                             <!-- Liens vers les pages d'oursons créés dynamiquement -->
                         </ul>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="index.html#teddiesCards">Tous nos oursons</a>
+                        <a class="dropdown-item" href="index.html#products">Tous nos oursons</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
     <!--End nav-menu -->
-    <nav id="sidebar">
+
+
+    <aside id="sidebar">
+
         <div class="sidebar-header h4 font-weight-bold p-4 mt-4 text-center">
             <a class="cart" href="#">Panier</a>
         </div>
-        <div id="cart-content"></div>
-    </nav>
+        <div id="cart-content">
+            <!-- Contenu du panier -->
+        </div>
+    </aside>
+    <img id="cart-teddy" src="images/cart-teddy.png">
     <!--End Header -->
 
     <main id="main">
-        <section class="hero d-flex flex-column justify-content-between py-5 mx-auto text-center bg-dark">
-            <h1 class="mx-auto">Bienvenue sur Orinours !</h1>
-            <p class="col-md-6 mx-auto">Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv.</p>
+        <section class="hero text-left bg-dark">
+            <div class="hero-layer">
+                <section class="d-flex flex-column col-lg-8 col-xl-5 text-center py-5 hero-text">
+                    <h1>Bienvenue sur Orinours !</h1>
+                    <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata
+                        corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead
+                        survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra
+                        adventus resi dentevil vultus comedat cerebella viventium.</p>
+                    <div>
+                        <h2>Des peluches faites à la main</h2>
+                        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering
+                            animata
+                            corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero
+                            undead
+                            survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra
+                            adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat
+                            max
+                            brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere
+                            carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains
+                            an
+                            Undead zombies. </p>
+                    </div>
+                    <div>
+                        <h2>Des oursons de qualité supérieure</h2>
+                        <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering
+                            animata
+                            corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero
+                            undead
+                            survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra
+                            adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat
+                            max
+                            brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere
+                            carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains
+                            an
+                            Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv.</p>
+                    </div>
+                    <a href="#teddiesCards" class="btn btn-primary w-content mx-auto"><i class="fas fa-paw"></i> Voir
+                        nos oursons <i class="fas fa-paw"></i></a>
+                </section>
+            </div>
         </section>
-        <section class="info col-md-8 mx-auto my-5 py-5">
-            <ul class="list-unstyled d-flex flex-wrap justify-content-between text-center">
-                <li class="warranty col-6 col-md-2 rounded-circle py-5">
-                    <i class="fas fa-heart mb-3"></i><br>
+        <section class="info bg-dark">
+            <ul class="list-unstyled mx-auto d-flex flex-wrap justify-content-center text-center py-5 mb-0">
+                <li class="m-md-4">
+                    <i class="fas fa-heart"></i><br>
                     <span>Garantis à vie</span>
                 </li>
-                <li class="handmade col-6 col-md-2 rounded-circle py-5">
-                    <i class="fas fa-hand-holding-heart mb-3"></i><br>
-                    <span>Faits à la main et avec amour</span>
+                <li class="m-md-4">
+                    <i class="fas fa-hand-holding-heart"></i><br>
+                    <span>Faits à la main</span>
                 </li>
-                <li class="gifts col-6 col-md-2 rounded-circle py-5">
-                    <i class="fas fa-gifts mb-3"></i><br>
+                <li class="m-md-4">
+                    <i class="fas fa-gifts"></i><br>
                     <span>Cadeaux personnalisés</span>
                 </li>
-                <li class="delivery col-6 col-md-2 rounded-circle py-5">
-                    <i class="fas fa-truck mb-3"></i><br>
+                <li class="m-md-4">
+                    <i class="fas fa-truck"></i><br>
                     <span>Livraison rapide</span>
                 </li>
             </ul>
         </section>
-        <section id="teddiesCards" class="col-10 d-flex flex-wrap justify-content-around pt-5 mx-auto text-center">
+        <section id="products" class="text-center products  py-5">
+            <h2 class="nos-oursons py-5 text-white">Nos oursons</h2>
+            <div id="teddiesCards" class="cards d-flex flex-wrap justify-content-center pb-5"></div>
             <!-- Cartes contenant les liens vers les pages d'oursons créés dynamiquement -->
         </section>
-
-        <!-- ======= Clients Section ======= -->
-        <section id="clients" class="clients">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>AVIS CLIENTS</h2>
-                    <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse.</p>
-                </div>
-            </div>
-        </section><!-- End Clients Section -->
-
     </main>
     <!--End #main -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="footer footer-top bg-dark text-white">
-            <div class="container d-flex mx-auto justify-content-between">
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>
-                        Liens utiles</h4>
-                    <ul class="list-unstyled">
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Accueil</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Produits</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Panier</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Mentions légales</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-contact">
-                    <h4>Contactez-Nous !</h4>
-                    <p>
-                        A108 Route de là bas <br>
-                        Ici, NS 535022<br>
-                        Ailleurs. <br><br>
-                        <strong>Téléphone :</strong> +00 7 12 34 56 78<br>
-                        <strong>Mail:</strong> Là@Orinours.com<br>
-                    </p>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-info">
-                    <h3>À propos de nous</h3>
-                    <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering
-                        animata
-                        corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero
-                        undead
-                        survivor dictum.</p>
-                    <div class="social-links mt-3">
-                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                    </div>
-                </div>
-
-            </div>
+        <div class="footer footer-top  text-white p-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, ipsa accusantium unde nihil deleniti soluta
+            quibusdam accusamus nostrum placeat ducimus nesciunt dolorum quis aut, alias eveniet iusto non. Cumque, rem!
         </div>
     </footer>
     <!--End Footer -->
