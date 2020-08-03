@@ -47,7 +47,8 @@ products(APITeddies).then(teddy => {
             name: teddy.name,
             quantity: parseInt(qte.value),
             price: (teddy.price * qte.value) / 100,
-            color: itemColor
+            color: itemColor,
+            url: teddy.imageUrl
         };
 
         if (qte.value > 0) {

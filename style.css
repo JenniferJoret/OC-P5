@@ -148,7 +148,7 @@ input[type=number]::-webkit-outer-spin-button {
   justify-content: space-around;
 }
 /*-----------------------------------*/
-.info{
+section.info{
   border: 25px solid black;
   border-image: url("/images/0.jpg") 100;
 }
@@ -213,7 +213,55 @@ input[type=number]::-webkit-outer-spin-button {
 /*--------------------------*/
 .cart-content-detail{
 background: url(images/cart-bg.jpg) right;
+align-items: center;
 }
+
+.img-sm {
+  width: auto;
+  height: 100px
+}
+
+.table-shopping-cart .price {
+  font-weight: bold;
+  display: block
+}
+
+.price {
+  font-weight: 600;
+  color: #212529
+}
+
+.btn.btn-out {
+  outline: 1px solid #fff;
+  outline-offset: -5px;
+}
+
+.btn-main {
+  border-radius: 2px;
+  text-transform: capitalize;
+  padding: 10px 19px;
+  cursor: pointer;
+  color: #fff;
+  width: 100%
+}
+
+.btn-light {
+  color: #ffffff;
+  background-color: #712620;
+  border-color: #f8f9fa;
+}
+
+.btn-light:hover {
+  color: #ffffff;
+  background-color: #712620;
+  border-color: #712620
+}
+
+
+
+
+
+
 #footer {
   background-color: var(--lightBrown);
   -webkit-box-shadow: 0px -11px 12px 0px rgba(0,0,0,0.75);

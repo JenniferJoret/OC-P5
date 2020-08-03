@@ -70,7 +70,37 @@
     <!--End Header -->
 
     <main id="main" class="cart-content-detail d-flex">
-            
+        <div id="cart-bloc" class="container-fluid col-lg-8">
+            <div class="row">
+                <aside class="col">
+                    <div class="card mx-auto">
+                        <div class="table-responsive">
+                            <table class="table table-borderless table-shopping-cart">
+                                <thead class="text-muted">
+                                    <tr class="small text-uppercase">
+                                        <th scope="col">Produit</th>
+                                        <th scope="col" width="120">Quantité</th>
+                                        <th scope="col" width="120">Prix</th>
+                                        <th scope="col" width="60" class="text-center">Supprimer</th>
+                                    </tr>
+                                </thead>
+                                <tbody id='cart-body'>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </aside>
+                <aside class="w-100 col-xl-3 card">
+                        <div class="card-body font-weight-bold p-2">
+                            <p class="d-flex justify-content-between">Prix total : <span id="total1" class=" font-weight-normal"></span></p>
+                            <p class="d-flex justify-content-between">Livraison : <span id="shipping" class="shipping text-success text-right font-weight-normal">Gratuite !</span></p>
+                            <p class="d-flex justify-content-between">Total : <span id="finalTotal" class="total"></span></p>
+                            <hr> 
+                            <a href="#" class="btn btn-out btn-primary btn-square btn-main" > Passer commmande </a> <a href="#" class="btn btn-out btn-success btn-square btn-main mt-2">Continuer les achats</a>
+                        </div>
+                </aside>
+            </div>
+        </div>
     </main>
     <!--End #main -->
 
@@ -94,12 +124,8 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="js/api.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/cart.js"></script>
 </body>
 
 </html>
-
-
-   

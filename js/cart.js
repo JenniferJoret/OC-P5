@@ -6,17 +6,27 @@ if (localStorage.cartItems) {
         total = total + parseInt(cartItem.price);
         //création des éléments du panier
         let productDetail = document.createElement('tr');
-        productDetail.innerHTML = '<td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td><td><a href="product.html?id="' + cartItem.id + '">' + cartItem.name + '</a></td><td>' + cartItem.color + '</td><td>' + (cartItem.price/cartItem.quantity) + ' €</td><td><input class="form-control" type="number" value="' + cartItem.quantity + '" /></td><td class="text-right">' + cartItem.price + ' €</td><td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>'
-        ;
+        productDetail.innerHTML = '<td><div class="d-flex w-100 align-items-center"><img src="'+cartItem.url+'" class="img-sm mr-3"> <span class="info"> <a href="#" class="title text-dark" data-abc="true">' + cartItem.name + '</a> <p class="text-muted small">' + cartItem.color + ' </span> </div></td><td> <input class="w-75" min="1" max="20" type="number" value="' + cartItem.quantity + '"></td>    <td><div class="price-wrap"><p class="price mb-0">' + cartItem.price + ' €</p> <small class="text-muted"> ' + cartItem.price / cartItem.quantity + ' € l\'unité </small> </div></td><td class="text-right"> </a> <a href="" class="btn btn-light"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
         cartContentDetail.appendChild(productDetail);
     })
+    //total général (bas détail panier)
     let totalPrice = document.createElement('tr');
-    totalPrice.innerHTML = '<tr><td></td><td></td><td></td><td></td><td><strong>Total</strong></td><td class="text-right"><strong>' + total + ' €</strong></td></tr>';
+    totalPrice.innerHTML = '<tr><td></td><td class="text-right"><strong>Total</strong></><td class="text-left"><strong>' + total + ' €</strong></td></tr>';
     cartContentDetail.appendChild(totalPrice);
 
+    //Totaux de la carte
+    let totalCart = document.getElementById("total1");
+    totalCart.innerText = total + " €";
+    let finalTotal = document.getElementById('finalTotal');
+    finalTotal.innerText = total + " €";
+
 } else {
- cartIsEmpty(cartContentDetail);
+    //Si le panier est vide, on n'affiche pas le bloc panier
+    document.getElementById('cart-bloc').style.display = "none";
+    //Et on affiche un message disant que le panier est vide
+    let emptyCart = document.createElement('h4');
+    emptyCart.classList.add('text-center', 'h1', 'mx-auto', 'bg-white', 'p-5', 'rounded');
+    emptyCart.innerText = "Votre panier est vide !"
+    document.getElementById('main').appendChild(emptyCart);
+
 }
-
-
-
