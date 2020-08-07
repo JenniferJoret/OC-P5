@@ -88,7 +88,6 @@ products(APITeddies).then(teddy => {
         if (localStorage.cartItems) {
             cartAmount = document.getElementById('cart-amount');
             let cartItems = JSON.parse(localStorage.cartItems);
-            console.log(cartItems);
             let qteAmount = 0;
             cartItems.forEach(cartItem => {
                 qteAmount = qteAmount + parseInt(cartItem.quantity);

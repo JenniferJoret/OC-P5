@@ -1,0 +1,23 @@
+.navbar {
+  background-color: $lightBrown;
+  -webkit-box-shadow: 0px 11px 12px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 11px 12px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 11px 12px 0px rgba(0, 0, 0, 0.75);
+  a{
+    color: $darkBrown;
+    font-weight: bold;
+  }
+}
+
+.navbar-brand img {
+  height: 2rem;
+  width: auto;
+}
+
+.dropdown-menu a {
+  color: black !important;
+}
+
+.fa-shopping-cart {
+  font-size: 1.2em;
+}

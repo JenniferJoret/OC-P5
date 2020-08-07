@@ -6,7 +6,7 @@ if (localStorage.cartItems) {
         total = total + parseInt(cartItem.price);
         //création des éléments du panier
         let productDetail = document.createElement('tr');
-        productDetail.innerHTML = '<td><div class="d-flex w-100 align-items-center"><img src="'+cartItem.url+'" class="img-sm mr-3"> <span class="info"> <a href="#" class="title text-dark" data-abc="true">' + cartItem.name + '</a> <p class="text-muted small">' + cartItem.color + ' </span> </div></td><td> <input class="w-75" min="1" max="20" type="number" value="' + cartItem.quantity + '"></td>    <td><div class="price-wrap"><p class="price mb-0">' + cartItem.price + ' €</p> <small class="text-muted"> ' + cartItem.price / cartItem.quantity + ' € l\'unité </small> </div></td><td class="text-right"> </a> <a href="" class="btn btn-light"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+        productDetail.innerHTML = '<td><div class="d-flex w-100 align-items-center"><img src="'+cartItem.url+'" class="img-sm mr-3"> <span class="info"> <a href="product.html?id='+cartItem.id+'" class="title text-dark" data-abc="true">' + cartItem.name + '</a> <p class="text-muted small">' + cartItem.color + ' </span> </div></td><td> <input class="w-75" min="1" max="20" type="number" value="' + cartItem.quantity + '"></td>    <td><div class="price-wrap"><p class="price mb-0">' + cartItem.price + ' €</p> <small class="text-muted"> ' + cartItem.price / cartItem.quantity + ' € l\'unité </small> </div></td><td class="text-right"> </a> <a href="" class="btn btn-warning"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
         cartContentDetail.appendChild(productDetail);
     })
     //total général (bas détail panier)

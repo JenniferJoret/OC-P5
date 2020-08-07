@@ -14,7 +14,6 @@ products(APITeddies).then(teddies => {
 if (localStorage.cartItems) {
     cartAmount = document.getElementById('cart-amount');
     let cartItems = JSON.parse(localStorage.cartItems);
-    console.log(cartItems);
     let qteAmount = 0;
     cartItems.forEach(cartItem => {
         qteAmount = qteAmount + parseInt(cartItem.quantity);
@@ -27,10 +26,11 @@ const cartContent = document.getElementById('cart-content');
 if (localStorage.cartItems) {
     const cartItems = JSON.parse(localStorage.cartItems);
     let total = 0;
+    
+    let productUl = document.createElement("ul");
     cartItems.forEach(cartItem => {
         total = total + parseInt(cartItem.price);
         //création des éléments du panier en side
-        let productUl = document.createElement("ul");
         productUl.classList.add('list-unstyled', 'mx-1', 'px-4');
         let productLi = document.createElement('li');
         productLi.classList.add('d-flex', 'justify-content-between');
@@ -50,7 +50,7 @@ if (localStorage.cartItems) {
     totalPrice.classList.add('text-center', 'h4', 'py-4');
     totalPrice.innerText = "Total : " + total + " €";
     let cartButton = document.createElement('a');
-    cartButton.classList.add('btn', 'btn-outline-light', 'd-flex', 'px-2', 'mx-auto', 'w-content');
+    cartButton.classList.add('btn', 'btn-outline-light','d-flex', 'px-2', 'mx-auto', 'w-content');
     cartButton.href = "cart.html";
     cartButton.innerText = "Voir le détail du panier";
     cartContent.appendChild(totalPrice);

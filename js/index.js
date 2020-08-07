@@ -6,16 +6,15 @@ products(APITeddies).then(teddies => {
 
         //création d'une carte pour chaque produit
         let teddyCard = document.createElement('div');
-        teddyCard.classList.add('card');
-        teddyCard.classList.add('col-3');
+        teddyCard.classList.add('card', 'text-center', 'col-10', 'col-md-5', 'col-xl-3');
         let teddyPicture = document.createElement('img');
         teddyPicture.classList.add('card-img-top');
         teddyPicture.src = teddy.imageUrl;
         teddyPicture.alt = "Photo de " + teddy.name;
         let teddyInnerCard = document.createElement('div');
-        teddyInnerCard.classList.add('card-body');
-        let teddyInnerTitle = document.createElement('h4');
-        teddyInnerTitle.classList.add('card-title');
+        teddyInnerCard.classList.add('card-body', 'd-flex', 'flex-column', 'justify-content-between');
+        let teddyInnerTitle = document.createElement('h3');
+        teddyInnerTitle.classList.add('card-title', 'h3');
         teddyInnerTitle.innerText = teddy.name;
         let teddyInnerDescription = document.createElement('p');
         teddyInnerDescription.classList.add('card-text');
@@ -24,7 +23,7 @@ products(APITeddies).then(teddies => {
         teddyLink.href = "product.html?id=" + teddy._id;
         teddyLink.classList.add('btn');
         teddyLink.classList.add('btn-primary');
-        teddyLink.innerHTML = '<i class="fas fa-paw"></i>  En savoir plus sur ' + teddy.name + '  <i class="fas fa-paw"></i>';
+        teddyLink.innerHTML = ' En savoir plus sur <br/> <i class="fas fa-paw"></i> ' + teddy.name + '  <i class="fas fa-paw"></i>';
 
         //mise en place de la carte
         teddiesCards.appendChild(teddyCard);

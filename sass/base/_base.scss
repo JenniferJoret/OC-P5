@@ -1,0 +1,50 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Coming Soon', cursive;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff!important;
+  text-decoration: none;
+  background-color: $lightBrown;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  color: #fff!important;
+  text-decoration: none;
+  background-color:$lightBrown;
+}
+
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &.active {
+    width: calc(100% - 15vw);
+  }
+}
+
+.card {
+  margin: 1rem;
+  padding: 1rem;
+  min-width: min-content;
+}
+
+.w-content {
+  width: fit-content;
+}

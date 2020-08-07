@@ -1,0 +1,72 @@
+.hero {
+  min-height: 100vh;
+  background: url(../images/teddy.jpg);
+  background-position: left;
+  background-attachment: fixed;
+  color: beige;
+  background-size: cover;
+}
+
+.hero-layer {
+  min-height: 100vh;
+  background-color: rgba(82, 82, 82, 0.5);
+}
+
+.hero-text {
+  min-height: 90vh;
+  justify-content: space-around;
+}
+
+/*-----------------------------------*/
+section.info {
+  border: 25px solid black;
+  border-image: url("/images/0.jpg") 100;
+  background: #3a2614 url(../images/bg-repeat.png) fixed top;
+}
+
+.info {
+
+  .fas {
+    font-size: 2.5rem;
+    background-color: $darkBrown;
+    color: transparent;
+    text-shadow: 0px 3px 1px rgba(255, 255, 255, 0.87);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+  }
+
+  span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: $darkBrown;
+    color: transparent;
+    text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.87);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+  }
+
+  ul li {
+    background-color: $lightBrown;
+    box-shadow: 0px 2px 3px $darkBrown;
+    padding: 2em;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+}
+
+.nos-oursons {
+  font-size: 3em;
+}
+
+.products {
+  background: url(../images/bg-teddy-1.jpg);
+  background-attachment: fixed;
+  background-size: contain;
+  background-size: cover;
+}
