@@ -4,9 +4,9 @@ const urlParams = new URLSearchParams(queryString);
 const product = urlParams.get('id')
 
 
+  
 //Modification de l'URL de l'API (ajout de l'ID)
 var APITeddies = "http://localhost:3000/api/teddies/" + product;
-
 
 // Récupération des informations du produit en fonction de l'ID envoyé dans l'URL
 products(APITeddies).then(teddy => {
@@ -76,23 +76,20 @@ products(APITeddies).then(teddy => {
                 //Sinon, on crée le tableau du storage
                 localStorage.setItem("cartItems", JSON.stringify([product]));
             }
+            //on met à jour le compte de la navbar et le panier en side
+            getCartDetail();
+            getNavCount();
+            //Et on affiche un message d'alerte pour l'utilisateur
             const alertSuccess = document.getElementById('alert-success');
             alertSuccess.textContent = product.name + " a bien été ajouté au panier !";
             alertSuccess.classList.remove('d-none');
             alertSuccess.classList.add('d-block');
+            //Qu'on enlève 3 secondes plus tard
             setTimeout(function(){ 
                 alertSuccess.classList.remove('d-block');
                 alertSuccess.classList.add('d-none'); 
             }, 3000);
         };
-        if (localStorage.cartItems) {
-            cartAmount = document.getElementById('cart-amount');
-            let cartItems = JSON.parse(localStorage.cartItems);
-            let qteAmount = 0;
-            cartItems.forEach(cartItem => {
-                qteAmount = qteAmount + parseInt(cartItem.quantity);
-            })
-            cartAmount.innerText = qteAmount;
-        }
+        
     });
 })

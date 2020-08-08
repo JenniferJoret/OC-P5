@@ -1,3 +1,4 @@
+//Mise en place des oursons dans le dropdown de la navbar
 products(APITeddies).then(teddies => {
     teddies.forEach(teddy => {
         const teddiesNav = document.getElementById('nav-teddies');
@@ -11,7 +12,10 @@ products(APITeddies).then(teddies => {
         teddyLi.appendChild(teddyLiLink);
     })
 });
-if (localStorage.cartItems) {
+
+
+//Fonction qui sert à renseigner le nombre d'articles dans le panier dans la navbar
+function getNavCount(){
     cartAmount = document.getElementById('cart-amount');
     let cartItems = JSON.parse(localStorage.cartItems);
     let qteAmount = 0;
@@ -20,13 +24,12 @@ if (localStorage.cartItems) {
     })
     cartAmount.innerText = qteAmount;
 }
-
-
 const cartContent = document.getElementById('cart-content');
-if (localStorage.cartItems) {
-    const cartItems = JSON.parse(localStorage.cartItems);
+//Fonction qui sert à renseigner le contenu du panier dans la sidebar
+function getCartDetail(){
+const cartItems = JSON.parse(localStorage.cartItems);
     let total = 0;
-    
+    cartContent.innerHTML="";
     let productUl = document.createElement("ul");
     cartItems.forEach(cartItem => {
         total = total + parseInt(cartItem.price);
@@ -39,7 +42,6 @@ if (localStorage.cartItems) {
         productLiLink.innerText = cartItem.quantity + " " + cartItem.name + " - " + cartItem.color;
         let productPrice = document.createElement("span");
         productPrice.innerText = cartItem.price + " €";
-
 
         cartContent.appendChild(productUl);
         productUl.appendChild(productLi);
@@ -55,8 +57,17 @@ if (localStorage.cartItems) {
     cartButton.innerText = "Voir le détail du panier";
     cartContent.appendChild(totalPrice);
     cartContent.appendChild(cartButton);
+}
+
+
+//Et si local storage, on liste les articles dans la sidebar
+
+if (localStorage.cartItems) {
+    getNavCount();
+    getCartDetail();
 
 } else {
+    //Sinon, on indique que le panier est vide
     let emptyCart = document.createElement('h4');
     emptyCart.classList.add('text-center');
     emptyCart.innerText = "Votre panier est vide !"
@@ -84,6 +95,7 @@ $(document).ready(function () {
     $('#sidebar, #main').css({
         marginTop: heightContent
     });
+
     //le main remplira toujours l'espace disponible
     function autoResizeDiv() {
         var heightFooter = $('#footer').height();

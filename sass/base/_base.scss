@@ -7,21 +7,51 @@ body {
   margin: 0;
   font-family: 'Coming Soon', cursive;
 }
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  opacity: 1;
+//changer la couleur lors du surlignage
+::selection {
+  background: $lightBrown; /* WebKit/Blink Browsers */
+  color: beige;
+}
+::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers */
+  color: beige;
 }
 
-.dropdown-item.active, .dropdown-item:active {
-  color: #fff!important;
-  text-decoration: none;
-  background-color: $lightBrown;
+input[type=number] {
+  //toujours afficher les flèches sur les inputs number
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    opacity: 1;
+  }
+
+  border: 1px solid $lightBrown;
+  border-radius: 5px;
+  color: $darkBrown;
 }
-.dropdown-item:focus, .dropdown-item:hover {
-  color: #fff!important;
-  text-decoration: none;
-  background-color:$lightBrown;
+
+.form-control {
+
+  border: 1px solid $lightBrown;
+  border-radius: 5px;
+  color: $darkBrown;
+
+  &:focus {
+    color: $darkBrown;
+    box-shadow: 0 0 0 0.2rem rgba(45, 25, 11, .5);
+    border-color: $lightBrown;
+  }
+}
+
+.dropdown-item {
+
+  &.active,
+  &.dropdown-item:active,
+  &.dropdown-item:focus,
+  &.dropdown-item:hover {
+    color: #fff !important;
+    text-decoration: none;
+    background-color: $lightBrown;
+  }
 }
 
 

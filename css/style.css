@@ -3,20 +3,12 @@
   color: beige;
   border-color: #2d190b;
 }
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:not(:disabled):not(.disabled):active {
   color: #6f4925;
   background-color: beige;
   border-color: #2d190b;
 }
-.btn-primary:focus {
-  box-shadow: 0 0 0 0.2rem rgba(45, 25, 11, 0.5);
-}
-.btn-primary:not(:disabled):not(.disabled):active {
-  color: #6f4925;
-  background-color: beige;
-  border-color: #2d190b;
-}
-.btn-primary:not(:disabled):not(.disabled):active:focus {
+.btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active:focus {
   box-shadow: 0 0 0 0.2rem rgba(45, 25, 11, 0.5);
 }
 
@@ -60,18 +52,39 @@ body {
   font-family: "Coming Soon", cursive;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+::selection {
+  background: #6f4925;
+  /* WebKit/Blink Browsers */
+  color: beige;
+}
+
+::-moz-selection {
+  background: #ffb7b7;
+  /* Gecko Browsers */
+  color: beige;
+}
+
+input[type=number] {
+  border: 1px solid #6f4925;
+  border-radius: 5px;
+  color: #2d190b;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
   opacity: 1;
 }
 
-.dropdown-item.active, .dropdown-item:active {
-  color: #fff !important;
-  text-decoration: none;
-  background-color: #6f4925;
+.form-control {
+  border: 1px solid #6f4925;
+  border-radius: 5px;
+  color: #2d190b;
+}
+.form-control:focus {
+  color: #2d190b;
+  box-shadow: 0 0 0 0.2rem rgba(45, 25, 11, 0.5);
+  border-color: #6f4925;
 }
 
-.dropdown-item:focus, .dropdown-item:hover {
+.dropdown-item.active, .dropdown-item.dropdown-item:active, .dropdown-item.dropdown-item:focus, .dropdown-item.dropdown-item:hover {
   color: #fff !important;
   text-decoration: none;
   background-color: #6f4925;
@@ -114,6 +127,8 @@ input[type=number]::-webkit-outer-spin-button {
 .navbar-brand img {
   height: 2rem;
   width: auto;
+  fill: red;
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.7));
 }
 
 .dropdown-menu a {
