@@ -4,7 +4,6 @@ const urlParams = new URLSearchParams(queryString);
 const product = urlParams.get('id')
 
 
-  
 //Modification de l'URL de l'API (ajout de l'ID)
 var APITeddies = "http://localhost:3000/api/teddies/" + product;
 
@@ -64,10 +63,10 @@ products(APITeddies).then(teddy => {
                         cartItems[i].price = cartItems[i].price + product.price;
                         isInArray = true;
                         break;
-                    } 
+                    }
                     i++;
                 }
-                if (isInArray == false){
+                if (isInArray == false) {
                     cartItems.push(product);
                 }
                 //et on envoie en storage;
@@ -85,11 +84,28 @@ products(APITeddies).then(teddy => {
             alertSuccess.classList.remove('d-none');
             alertSuccess.classList.add('d-block');
             //Qu'on enlève 3 secondes plus tard
-            setTimeout(function(){ 
+            setTimeout(function () {
                 alertSuccess.classList.remove('d-block');
-                alertSuccess.classList.add('d-none'); 
+                alertSuccess.classList.add('d-none');
             }, 3000);
         };
-        
+
     });
-})
+}).catch((error) => {
+    //si le produit n'existe pas, on affiche un message d'erreur et on redirige vers la page d'accueil
+    let content = document.getElementById('main');
+    content.innerHTML = '<div class="text-center m-auto bg-white p-5 rounded"><h2 class="h1">Oups ! Le produit recherché n\'existe pas !</h2><br/><p class="h4">Vous allez être redirigé vers la page d\'accueil dans <span id="countdown">5</span> seconde<span id="plural">s</span>...</p></div>';
+    var seconds = document.getElementById("countdown").textContent;
+    //animer les secondes et prise en compte du pluriel
+    var countdown = setInterval(function () {
+        seconds--;
+        document.getElementById("countdown").textContent = seconds;
+        (seconds == 1) ? document.getElementById("plural").textContent = "": document.getElementById("plural").textContent = "s";
+        document.getElementById("countdown").textContent = seconds;
+        if (seconds <= 1) clearInterval(countdown);
+    }, 1000);
+    //redirection vers la page d'accueil
+    setTimeout(function () {
+        window.location.href = "index.html";
+    }, 5000);
+});
