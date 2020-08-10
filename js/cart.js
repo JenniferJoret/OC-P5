@@ -3,6 +3,8 @@ let shippingContent = {
     contact: {},
     products: []
 }
+
+let i = 0;
 //afficher les éléments du localStorage dans le panier
 if (localStorage.cartItems) {
     const cartItems = JSON.parse(localStorage.cartItems);
@@ -11,9 +13,20 @@ if (localStorage.cartItems) {
         total = total + parseInt(cartItem.price);
         //création des éléments du panier
         let productDetail = document.createElement('tr');
-        productDetail.innerHTML = '<td><div class="d-flex w-100 align-items-center"><img src="' + cartItem.url + '" class="img-sm mr-3"> <span class="info"> <a href="product.html?id=' + cartItem.id + '" class="title text-dark" data-abc="true">' + cartItem.name + '</a> <p class="text-muted small">' + cartItem.color + ' </span> </div></td><td> <input class="pl-2" min="1" max="20" type="number" value="' + cartItem.quantity + '"></td>    <td><div class="price-wrap"><p class="price mb-0">' + cartItem.price + ' €</p> <small class="text-muted"> ' + cartItem.price / cartItem.quantity + ' € l\'unité </small> </div></td><td class="text-right"> </a> <a id="delete-btn" href="" class="btn btn-warning"><i class="fa fa-trash" aria-hidden="true"></i></a></td>';
+        productDetail.innerHTML = '<td><div class="d-flex w-100 align-items-center"><img src="' + cartItem.url + '" class="img-sm mr-3"> <span class="info"> <a href="product.html?id=' + cartItem.id + '" class="title text-dark" data-abc="true">' + cartItem.name + '</a> <p class="text-muted small">' + cartItem.color + ' </span> </div></td><td> <input class="pl-2" min="1" max="20" type="number" value="' + cartItem.quantity + '"></td>    <td><div class="price-wrap"><p class="price mb-0">' + cartItem.price + ' €</p> <small class="text-muted"> ' + cartItem.price / cartItem.quantity + ' € l\'unité </small> </div></td><td class="text-right"> </a> <button id="delete-' + i + '" value="'+i+'" class="btn btn-warning test"><i class="fa fa-trash" aria-hidden="true"></i></button></td>';
         cartContentDetail.appendChild(productDetail);
         shippingContent.products.push(cartItem.id);
+        let deleteBtn = document.getElementById('delete-' + i);
+        deleteBtn.onclick = function () {
+            cartItems.splice(deleteBtn.value, 1);
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            document.location.reload(true);
+            //si le panier est vide, on supprime l'entrée du localStorage
+            if (cartItems.length === 0) {
+                localStorage.removeItem("cartItems");
+            }
+        };
+        i++;
     })
     //total général (bas détail panier)
     let totalPrice = document.createElement('tr');
@@ -50,7 +63,7 @@ const sendCart = async () => {
         headers: {
             "Content-Type": "application/json",
         },
-        method : "POST",
+        method: "POST",
         body: JSON.stringify(shippingContent),
     });
     return await response.json();
@@ -69,24 +82,7 @@ confirmShipping.addEventListener("click", async (e) => {
     //envoi de la commande au serveur
     const response = await sendCart();
     //et on redirige vers la page de confirmation en affichant le prénom et le n°de commande
-     window.location = `./confirmation.html?id=${response.orderId}&user=${firstName.value}`;
+    window.location = `./confirmation.html?id=${response.orderId}&user=${firstName.value}`;
     localStorage.removeItem("cartItems");
-    
+
 });
-
-
-// let deleteBtn = document.getElementById('delete-btn');
-// let i=0;
-//     //On supprime l'élément
-//     deleteBtn.addEventListener('click', function (){
-//         let productColor = document.getElementById('')
-//         while (i < cartItems.length) {
-//             if (cartItems[i].id == product.id && cartItems[i].color == product.color) {
-//                 cartItems.splice([i], 1);
-//                 break;
-//             }
-//             i++;
-//         }
-//         //et on renvoie en storage;
-//         localStorage.setItem("cartItems", JSON.stringify(cartItems));
-//     }) let i = 0;
