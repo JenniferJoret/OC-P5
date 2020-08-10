@@ -10,6 +10,17 @@
 
 .table-shopping-cart .price {
   font-weight: bold;
-  display: block;
   font-weight: 600;
+}
+
+.top-cart-price-bloc{
+  background-color: transparent;
+  border: none;
+}
+
+#shipping-form{
+  border-radius: 5px;
+  form{
+    display: grid;
+  }
 }

@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
@@ -24,6 +22,12 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
 
 
 
@@ -48,7 +52,7 @@
             <i class="fas fa-paw"></i> Menu
         </button>
         <a class="navbar-brand m-0" href="index.html">
-            <img src="/images/logo.svg" alt="Logo d'Orinours">
+            <img src="/images/logo.svg" alt="">
         </a>
         <div id="sidebarCollapse" class="d-flex justify-content-center order-lg-1 ml-lg-2">
             <button type="button" class="btn btn-outline-light side-menu-btn px-2">
@@ -58,7 +62,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link active" href="index.html">Accueil</a>
+                    <a class="nav-link active" href="index.html">Accueil <span class="sr-only">(current)</span></a>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -91,64 +95,10 @@
     <img id="cart-teddy" src="images/cart-teddy.png">
     <!--End Header -->
 
-    <main id="main" class="cart-content-detail d-flex py-5">
-        <div id="cart-bloc" class="container-fluid col-lg-8">
-            <div class="row">
-                <aside class="col">
-                    <div class="card mx-auto">
-                        <div class="table-responsive">
-                            <table class="table table-borderless table-shopping-cart">
-                                <thead class="text-muted">
-                                    <tr class="small text-uppercase">
-                                        <th scope="col">Produit</th>
-                                        <th scope="col" width="120">Quantité</th>
-                                        <th scope="col" width="120">Prix</th>
-                                        <th scope="col" width="60" class="text-center">Supprimer</th>
-                                    </tr>
-                                </thead>
-                                <tbody id='cart-body'>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </aside>
-                <aside class="top-cart-price-bloc w-100 col-xl-2 p-0 card w-content">
-                    <div class="bg-white cart-price-bloc card-body font-weight-bold p-4">
-                        <p class="d-flex justify-content-between">Prix total : <span id="total1"
-                                class=" font-weight-normal"></span></p>
-                        <p class="d-flex justify-content-between">Livraison : <span id="shipping"
-                                class="shipping text-success text-right font-weight-normal">Gratuite !</span></p>
-                        <p class="d-flex justify-content-between">Total : <span id="finalTotal" class="total"></span>
-                        </p>
-                        <hr>
-                        <a href="#" id="cart-buy" class="btn btn-out btn-success brown btn-square btn-main"> Passer
-                            commmande </a> <a href="index.html"
-                            class="btn btn-out btn-success btn-square btn-main mt-2">Continuer les achats</a>
-                    </div>
-                </aside>
-            </div>
-        </div>
-        <div id="shipping-form" class="d-none bg-white p-5 mx-auto">
-            <h2 class="h1 pb-4">Informations de livraison</h2>
-            <form id="form">
-                <label for="firstName">Prénom : </label>
-                <input type="text" id="firstName" name="firstName" required />
-                <br>
-                <label for="lastName">Nom : </label>
-                <input type="text" id="lastName" name="lastName" required />
-                <br>
-                <label for="address">Adresse : </label>
-                <input type="text" id="address" name="address" required />
-                <br>
-                <label for="city">Ville : </label>
-                <input type="text" id="city" name="city" required />
-                <br>
-                <label for="email">Email : </label>
-                <input type="email" id="email" name="email" required />
-                <br>
-                <input type="submit" id="confirm" value="Valider" />
-            </form>
-        </div>
+    <main id="main" class="confirmation-bloc d-flex py-5">
+        <div class="col-8 mx-auto bg-white text-center p-4">
+            <h1>Merci pour vos achats, <span id="name"></span> !</h1><br>
+            <p class="h3 p-4">Votre commande n° <span id="orderNumber" class="text-success"></span> a bien été prise en compte, et sera traitée dans les plus brefs délais.</p></div>
     </main>
     <!--End #main -->
 
@@ -173,7 +123,8 @@
     </script>
     <script src="js/api.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="js/confirmation.js"></script>
+    <!-- <script src="js/confirmation.js"></script> -->
 </body>
 
 </html>

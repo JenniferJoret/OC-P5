@@ -40,9 +40,16 @@
 
 .btn-main {
     border-radius: 2px;
-    text-transform: capitalize;
     padding: 10px 19px;
     cursor: pointer;
     color: #fff;
-    width: 100%
+    width: 100%;
+    &.brown{
+        background-color: $lightBrown;
+        color: beige;
+        border-color: $darkBrown;
+        &:hover{
+            background-color: darken($lightBrown, 5);
+        }
+    }
 }

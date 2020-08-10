@@ -35,11 +35,18 @@
 
 .btn-main {
   border-radius: 2px;
-  text-transform: capitalize;
   padding: 10px 19px;
   cursor: pointer;
   color: #fff;
   width: 100%;
+}
+.btn-main.brown {
+  background-color: #6f4925;
+  color: beige;
+  border-color: #2d190b;
+}
+.btn-main.brown:hover {
+  background-color: #5c3c1f;
 }
 
 html {
@@ -279,10 +286,38 @@ section.info {
 
 .table-shopping-cart .price {
   font-weight: bold;
-  display: block;
   font-weight: 600;
 }
 
+.top-cart-price-bloc {
+  background-color: transparent;
+  border: none;
+}
+
+#shipping-form {
+  border-radius: 5px;
+}
+#shipping-form form {
+  display: grid;
+}
+
+.confirmation-bloc {
+  background: url(../images/confirmation-bg.jpg) left center;
+  background-size: cover;
+  align-items: center;
+}
+.confirmation-bloc div {
+  height: fit-content;
+  border-radius: 5px;
+}
+
+@media (min-width: 1200px) {
+  .cart-price-bloc {
+    position: fixed;
+    width: min-content;
+    border-radius: 5px;
+  }
+}
 @media (max-width: 1200px) {
   #sidebar {
     margin-right: -25vw;

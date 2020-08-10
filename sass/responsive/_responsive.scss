@@ -1,63 +1,73 @@
+@media (min-width: 1200px) {
+  .cart-price-bloc{
+    position: fixed;
+    width: min-content;
+    border-radius: 5px;
+  }
+}
 @media (max-width: 1200px) {
 
-    #sidebar {
-      margin-right: -25vw;
-      min-width: 25vw;
-      max-width: 25vw;
-    }
-  
-    #content.active {
-      width: calc(100% - 25vw);
-      overflow: hidden;
-    }
-    
-    #cart-teddy.active {
-      right: 23.8vw;
-    }
+  #sidebar {
+    margin-right: -25vw;
+    min-width: 25vw;
+    max-width: 25vw;
   }
-  
-  @media (max-width: 992px) {
-    #sidebar {
-      margin-right: -35vw;
-      min-width: 35vw;
-      max-width: 35vw;
-    }
-  
-    #content.active {
-      width: calc(100% - 35vw);
-    }
-    #cart-teddy.active {
-      right: 33.8vw;
-    }
+
+  #content.active {
+    width: calc(100% - 25vw);
+    overflow: hidden;
   }
-  
-  @media (max-width: 768px) {
-    #sidebar {
-      margin-right: -40vw;
-      min-width: 40vw;
-      max-width: 40vw;
-    }
-  
-    #content.active {
-      width: calc(100% - 40vw);
-    }
-    #cart-teddy.active {
-      right: 38.5vw;
-    }
+
+  #cart-teddy.active {
+    right: 23.8vw;
   }
-  
-  @media (max-width: 576px) {
-    #sidebar {
-      margin-right: -100vw;
-      min-width: 100vw;
-      max-width: 100vw;
-    }
-  
-    #content.active {
-      width: calc(100% - 100vw);
-      overflow: hidden;
-    }
-    #cart-teddy.active {
-      display: none;
-    }
+}
+
+@media (max-width: 992px) {
+  #sidebar {
+    margin-right: -35vw;
+    min-width: 35vw;
+    max-width: 35vw;
   }
+
+  #content.active {
+    width: calc(100% - 35vw);
+  }
+
+  #cart-teddy.active {
+    right: 33.8vw;
+  }
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-right: -40vw;
+    min-width: 40vw;
+    max-width: 40vw;
+  }
+
+  #content.active {
+    width: calc(100% - 40vw);
+  }
+
+  #cart-teddy.active {
+    right: 38.5vw;
+  }
+}
+
+@media (max-width: 576px) {
+  #sidebar {
+    margin-right: -100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+  }
+
+  #content.active {
+    width: calc(100% - 100vw);
+    overflow: hidden;
+  }
+
+  #cart-teddy.active {
+    display: none;
+  }
+}
