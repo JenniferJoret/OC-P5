@@ -1,3 +1,9 @@
+.btn:focus {
+  color: #2d190b;
+  box-shadow: 0 0 0 0.2rem rgba(45, 25, 11, 0.5);
+  border-color: #6f4925;
+}
+
 .btn-primary {
   background-color: #6f4925;
   color: beige;

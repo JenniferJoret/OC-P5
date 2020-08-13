@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
@@ -91,30 +91,31 @@
     <!--End Header -->
 
     <main id="main" class="product-detail d-flex">
-            <div class="card d-flex flex-row col-md-8 mx-auto">
-                <div class="col-6">
-                    <img class="col-12" id="product-picture" />
+        <div class="card d-flex flex-row col-md-8 mx-auto">
+            <div class="col-6">
+                <img class="col-12" id="product-picture" />
+            </div>
+            <div class="details col-6 align-self-center">
+                <h1 id="product-title"></h1>
+                <p id="product-description"></p>
+                <div class="d-flex align-items-start">
+                    <h5 class="colors">Quantité :</h5>
+                    <input id="quantity" class="quantity ml-4 pl-2" min="1" max="20" name="quantity" value="1"
+                        type="number">
                 </div>
-                <div class="details col-6 align-self-center">
-                    <h1 id="product-title"></h1>
-                    <p id="product-description"></p>
-                    <div class="d-flex align-items-start">
-                        <h5 class="colors">Quantité :</h5>
-                        <input id="quantity" class="quantity ml-4 pl-2" min="1" max="20" name="quantity" value="1"
-                            type="number">
-                    </div>
-                    <div class="d-flex align-items-end">
-                        <h5 class="colors">Couleur(s) disponible(s) :</h5>
-                        <select id="inputState" class="form-control ml-4"></select>
-                    </div>
-                    <h4 id="price" class="my-4"></h4>
-                    <div class="action">
-                        <button id="add-to-cart" class="add-to-cart btn btn-default" type="button">Ajouter au panier</button>
-                    </div>
-                    <div class="alert alert-success text-center mt-3 d-none" id="alert-success">
+                <div class="d-flex align-items-end">
+                    <h5 class="colors">Couleur(s) disponible(s) :</h5>
+                    <select id="inputState" class="form-control ml-4"></select>
+                </div>
+                <h4 id="price" class="my-4"></h4>
+                <div class="action d-flex align-items-baseline">
+                    <button id="add-to-cart" class="add-to-cart btn btn-default py-2 h-100" type="button">Ajouter au
+                        panier</button>
+                    <div class="alert alert-success text-center ml-4 my-0 py-2 w-100 d-none" id="alert-success">
                     </div>
                 </div>
             </div>
+        </div>
     </main>
     <!--End #main -->
 
@@ -143,6 +144,3 @@
 </body>
 
 </html>
-
-
-   

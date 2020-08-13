@@ -7,17 +7,22 @@ body {
   margin: 0;
   font-family: 'Coming Soon', cursive;
 }
+
 //changer la couleur lors du surlignage
 ::selection {
-  background: $lightBrown; /* WebKit/Blink Browsers */
+  background: $lightBrown;
+  /* WebKit/Blink Browsers */
   color: beige;
 }
+
 ::-moz-selection {
-  background: #ffb7b7; /* Gecko Browsers */
+  background: #ffb7b7;
+  /* Gecko Browsers */
   color: beige;
 }
 
 input[type=number] {
+
   //toujours afficher les flèches sur les inputs number
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
@@ -30,15 +35,12 @@ input[type=number] {
 }
 
 .form-control {
-
   border: 1px solid $lightBrown;
   border-radius: 5px;
   color: $darkBrown;
 
   &:focus {
-    color: $darkBrown;
-    box-shadow: 0 0 0 0.2rem rgba(45, 25, 11, .5);
-    border-color: $lightBrown;
+    @include focus;
   }
 }
 

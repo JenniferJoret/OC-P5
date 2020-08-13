@@ -13,9 +13,10 @@ if (localStorage.cartItems) {
         total = total + parseInt(cartItem.price);
         //création des éléments du panier
         let productDetail = document.createElement('tr');
-        productDetail.innerHTML = '<td><div class="d-flex w-100 align-items-center"><img src="' + cartItem.url + '" class="img-sm mr-3"> <span class="info"> <a href="product.html?id=' + cartItem.id + '" class="title text-dark" data-abc="true">' + cartItem.name + '</a> <p class="text-muted small">' + cartItem.color + ' </span> </div></td><td> <input class="pl-2" min="1" max="20" type="number" value="' + cartItem.quantity + '"></td>    <td><div class="price-wrap"><p class="price mb-0">' + cartItem.price + ' €</p> <small class="text-muted"> ' + cartItem.price / cartItem.quantity + ' € l\'unité </small> </div></td><td class="text-right"> </a> <button id="delete-' + i + '" value="'+i+'" class="btn btn-warning test"><i class="fa fa-trash" aria-hidden="true"></i></button></td>';
+        productDetail.innerHTML = '<td><div class="d-flex w-100 align-items-center"><img src="' + cartItem.url + '" class="img-sm mr-3"> <span class="info"> <a href="product.html?id=' + cartItem.id + '" class="title text-dark" data-abc="true">' + cartItem.name + '</a> <p class="text-muted small">' + cartItem.color + ' </span> </div></td><td> <p class="pl-4 text-bold h5 ">'+ cartItem.quantity + '</p></td>    <td><div class="price-wrap"><p class="price mb-0">' + cartItem.price + ' €</p> <small class="text-muted"> ' + cartItem.price / cartItem.quantity + ' € l\'unité </small> </div></td><td class="text-right"> </a> <button id="delete-' + i + '" value="' + i + '" class="btn btn-warning test"><i class="fa fa-trash" aria-hidden="true"></i></button></td>';
         cartContentDetail.appendChild(productDetail);
         shippingContent.products.push(cartItem.id);
+        //Suppression de l'élément relatif au bouton "supprimé" cliqué
         let deleteBtn = document.getElementById('delete-' + i);
         deleteBtn.onclick = function () {
             cartItems.splice(deleteBtn.value, 1);
