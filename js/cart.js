@@ -1,8 +1,30 @@
 const cartContentDetail = document.getElementById('cart-body');
+
 let shippingContent = {
     contact: {},
     products: []
 }
+
+function validateEmail(mail) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(mail).toLowerCase());
+}
+
+
+// Envoie données à l'api
+const sendCart = async () => {
+    const response = await fetch("http://localhost:3000/api/teddies/order", {
+        headers: {
+            "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify(shippingContent),
+    }).catch(function (error) {
+        console.log("error.response.data"); // this is the part you need that catches 400 request
+    });
+    return await response.json();
+};
+
 
 let i = 0;
 //afficher les éléments du localStorage dans le panier
@@ -13,7 +35,7 @@ if (localStorage.cartItems) {
         total = total + parseInt(cartItem.price);
         //création des éléments du panier
         let productDetail = document.createElement('tr');
-        productDetail.innerHTML = '<td><div class="d-flex w-100 align-items-center"><img src="' + cartItem.url + '" class="img-sm mr-3"> <span class="info"> <a href="product.html?id=' + cartItem.id + '" class="title text-dark" data-abc="true">' + cartItem.name + '</a> <p class="text-muted small">' + cartItem.color + ' </span> </div></td><td> <p class="pl-4 text-bold h5 ">'+ cartItem.quantity + '</p></td>    <td><div class="price-wrap"><p class="price mb-0">' + cartItem.price + ' €</p> <small class="text-muted"> ' + cartItem.price / cartItem.quantity + ' € l\'unité </small> </div></td><td class="text-right"> </a> <button id="delete-' + i + '" value="' + i + '" class="btn btn-warning test"><i class="fa fa-trash" aria-hidden="true"></i></button></td>';
+        productDetail.innerHTML = '<td><div class="d-flex w-100 align-items-center"><img src="' + cartItem.url + '" class="img-sm mr-3"> <span class="info"> <a href="product.html?id=' + cartItem.id + '" class="title text-dark" data-abc="true">' + cartItem.name + '</a> <p class="text-muted small">' + cartItem.color + ' </span> </div></td><td> <p class="pl-4 text-bold h5 ">' + cartItem.quantity + '</p></td>    <td><div class="price-wrap"><p class="price mb-0">' + cartItem.price + ' €</p> <small class="text-muted"> ' + cartItem.price / cartItem.quantity + ' € l\'unité </small> </div></td><td class="text-right"> </a> <button id="delete-' + i + '" value="' + i + '" class="btn btn-warning test"><i class="fa fa-trash" aria-hidden="true"></i></button></td>';
         cartContentDetail.appendChild(productDetail);
         shippingContent.products.push(cartItem.id);
         //Suppression de l'élément relatif au bouton "supprimé" cliqué
@@ -58,21 +80,27 @@ cartBuyBtn.addEventListener('click', function () {
     shippingForm.style.display = "bloc";
 })
 
-// Envoie données à l'api
-const sendCart = async () => {
-    const response = await fetch("http://localhost:3000/api/teddies/order", {
-        headers: {
-            "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify(shippingContent),
-    });
-    return await response.json();
-};
+
+let mailValue = document.getElementById('email');
 let confirmShipping = document.getElementById("confirm");
-confirmShipping.addEventListener("click", async (e) => {
+let alertWarning = document.getElementById('alert-warning');
+let form = document.querySelector('form');
+
+form.addEventListener("input", function () {
+    //On vérifie l'adresse vie regex, si elle n'est pas bonne, on affiche un message d'erreur, et on empêche la soumission du formulaire
+    if (validateEmail(mailValue.value) === false) {
+        alertWarning.classList.remove('d-none');
+        alertWarning.innerHTML = '<p>Veuillez renseigner une adresse valide</p>';
+        //Si elle est au bon format, on retire le message d'erreur, et on rend le bouton accessible
+    } else {
+        alertWarning.classList.add('d-none');
+    }
+});
+
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
     let form = $('form').serializeArray();
+    //On récupère les informations du formulaire
     shippingContent.contact = {
         firstName: form[0].value,
         lastName: form[1].value,
@@ -84,6 +112,4 @@ confirmShipping.addEventListener("click", async (e) => {
     const response = await sendCart();
     //et on redirige vers la page de confirmation en affichant le prénom et le n°de commande
     window.location = `./confirmation.html?id=${response.orderId}&user=${firstName.value}`;
-    localStorage.removeItem("cartItems");
-
-});
+})

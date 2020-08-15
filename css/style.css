@@ -65,6 +65,10 @@ body {
   font-family: "Coming Soon", cursive;
 }
 
+p {
+  margin: auto;
+}
+
 ::selection {
   background: #6f4925;
   /* WebKit/Blink Browsers */
