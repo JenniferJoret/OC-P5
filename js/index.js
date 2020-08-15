@@ -1,3 +1,5 @@
+//GESTION DE L'AFFICHAGES DES DIFFERENTS PRODUITS PRESENTS DANS L'API
+
 products(APITeddies).then(teddies => {
     teddies.forEach(teddy => {
 

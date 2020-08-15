@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .btn:focus {
   color: #2d190b;
   box-shadow: 0 0 0 0.2rem rgba(45, 25, 11, 0.5);
@@ -294,6 +295,10 @@ section.info {
   height: 100px;
 }
 
+thead {
+  display: table-header-group;
+}
+
 .table-shopping-cart .price {
   font-weight: bold;
   font-weight: 600;
@@ -386,7 +391,35 @@ section.info {
     overflow: hidden;
   }
 
+  .cart-content-detail .card {
+    padding: 0 !important;
+  }
+
+  #cart-body .cart-inner {
+    padding: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #cart-body .pic-title {
+    justify-content: center;
+  }
+  #cart-body .pic-title div {
+    justify-content: center;
+  }
+  #cart-body .qte:before {
+    content: "Quantité";
+  }
+  #cart-body .cart-total {
+    display: flex;
+    justify-content: center;
+  }
+
   #cart-teddy.active {
+    display: none;
+  }
+
+  thead {
     display: none;
   }
 }

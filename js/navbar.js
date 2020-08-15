@@ -1,21 +1,7 @@
-//Mise en place des oursons dans le dropdown de la navbar
-products(APITeddies).then(teddies => {
-    teddies.forEach(teddy => {
-        const teddiesNav = document.getElementById('nav-teddies');
-        //création des éléments de liste pour la barre de navigation
-        let teddyLi = document.createElement('li');
-        let teddyLiLink = document.createElement('a');
-        teddyLiLink.classList.add('dropdown-item');
-        teddyLiLink.href = "product.html?id=" + teddy._id;
-        teddyLiLink.innerText = teddy.name;
-        teddiesNav.appendChild(teddyLi);
-        teddyLi.appendChild(teddyLiLink);
-    })
-});
+const cartContent = document.getElementById('cart-content');
 
-
-//Fonction qui sert à renseigner le nombre d'articles dans le panier dans la navbar
-function getNavCount(){
+//Fonction qui sert à renseigner le nombre d'articles dans le panier de la navbar
+function getNavCount() {
     cartAmount = document.getElementById('cart-amount');
     let cartItems = JSON.parse(localStorage.cartItems);
     let qteAmount = 0;
@@ -24,12 +10,12 @@ function getNavCount(){
     })
     cartAmount.innerText = qteAmount;
 }
-const cartContent = document.getElementById('cart-content');
+
 //Fonction qui sert à renseigner le contenu du panier dans la sidebar
-function getCartDetail(){
-const cartItems = JSON.parse(localStorage.cartItems);
+function getCartDetail() {
+    const cartItems = JSON.parse(localStorage.cartItems);
     let total = 0;
-    cartContent.innerHTML="";
+    cartContent.innerHTML = "";
     let productUl = document.createElement("ul");
     cartItems.forEach(cartItem => {
         total = total + parseInt(cartItem.price);
@@ -52,7 +38,7 @@ const cartItems = JSON.parse(localStorage.cartItems);
     totalPrice.classList.add('text-center', 'h4', 'py-4');
     totalPrice.innerText = "Total : " + total + " €";
     let cartButton = document.createElement('a');
-    cartButton.classList.add('btn', 'btn-outline-light','d-flex', 'px-2', 'mx-auto', 'w-content');
+    cartButton.classList.add('btn', 'btn-outline-light', 'd-flex', 'px-2', 'mx-auto', 'w-content');
     cartButton.href = "cart.html";
     cartButton.innerText = "Voir le détail du panier";
     cartContent.appendChild(totalPrice);
@@ -60,12 +46,27 @@ const cartItems = JSON.parse(localStorage.cartItems);
 }
 
 
-//Et si local storage, on liste les articles dans la sidebar
+//Mise en place des oursons dans le dropdown de la navbar
+products(APITeddies).then(teddies => {
+    teddies.forEach(teddy => {
+        const teddiesNav = document.getElementById('nav-teddies');
+        //création des éléments de liste pour la barre de navigation
+        let teddyLi = document.createElement('li');
+        let teddyLiLink = document.createElement('a');
+        teddyLiLink.classList.add('dropdown-item');
+        teddyLiLink.href = "product.html?id=" + teddy._id;
+        teddyLiLink.innerText = teddy.name;
+        teddiesNav.appendChild(teddyLi);
+        teddyLi.appendChild(teddyLiLink);
+    })
+});
 
+
+//GESTION DU PANIER SIDEBAR
+//Si local storage, on liste les articles dans la sidebar
 if (localStorage.cartItems) {
     getNavCount();
     getCartDetail();
-
 } else {
     //Sinon, on indique que le panier est vide
     let emptyCart = document.createElement('h4');
@@ -74,6 +75,8 @@ if (localStorage.cartItems) {
     cartContent.appendChild(emptyCart);
 }
 
+
+//GESTION DU COMPORTEMENT DE LA PAGE (NAVBAR, SIDEBAR, ET CONTENU DE LA PAGE)
 $(document).ready(function () {
     //afficher et masquer la sidebar
     $(function () {
@@ -103,5 +106,4 @@ $(document).ready(function () {
     }
     window.onresize = autoResizeDiv;
     autoResizeDiv();
-
 });

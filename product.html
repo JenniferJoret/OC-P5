@@ -39,79 +39,78 @@
 </head>
 
 <body id="content" class="wrapper d-flex flex-column m-0">
-    <!-- Page Content  -->
-    <nav class="navbar navbar-expand-lg fixed-top px-0 px-md-5" id="nav">
-        <button class="d-lg-none btn btn-outline-light px-2" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <i class="fas fa-paw"></i> Menu
+  <!-- Page Content  -->
+  <nav class="navbar navbar-expand-md fixed-top px-0 px-md-5 justify-content-around" id="nav">
+    <button class="d-md-none btn btn-outline-light px-2" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-paw"></i> Menu
+    </button>
+    <a class="navbar-brand m-0" href="index.html">
+        <img src="/images/logo.svg" alt="">
+    </a>
+    <div id="sidebarCollapse" class="d-flex justify-content-center order-md-1 ml-md-2">
+        <button type="button" class="btn btn-outline-light side-menu-btn px-2">
+            <i class="fas fa-shopping-cart pr-2"></i><span id="cart-amount">0</span>
         </button>
-        <a class="navbar-brand m-0" href="index.html">
-            <img src="/images/logo.svg" alt="Logo d'Orinours">
-        </a>
-        <div id="sidebarCollapse" class="d-flex justify-content-center order-lg-1 ml-lg-2">
-            <button type="button" class="btn btn-outline-light side-menu-btn px-2">
-                <i class="fas fa-shopping-cart pr-2"></i><span id="cart-amount">0</span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link active" href="index.html">Accueil</span></a>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Nos créations
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                        <ul class="list-unstyled" id="nav-teddies">
-                            <!-- Liens vers les pages d'oursons créés dynamiquement -->
-                        </ul>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="index.html#products">Tous nos oursons</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!--End nav-menu -->
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto px-3">
+            <li class="nav-item active">
+                <a class="nav-link active" href="index.html">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Nos créations
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <ul class="list-unstyled" id="nav-teddies">
+                        <!-- Liens vers les pages d'oursons créés dynamiquement -->
+                    </ul>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="index.html#products">Tous nos oursons</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--End nav-menu -->
 
 
-    <aside id="sidebar">
+<aside id="sidebar">
+    <div class="sidebar-header h4 font-weight-bold p-4 mt-4 text-center">
+        <a class="cart" href="#">Panier</a>
+    </div>
+    <div id="cart-content">
+        <!-- Contenu du panier -->
+    </div>
+</aside>
+<img id="cart-teddy" src="images/cart-teddy.png">
+<!--End Header -->
 
-        <div class="sidebar-header h4 font-weight-bold p-4 mt-4 text-center">
-            <a class="cart" href="#">Panier</a>
-        </div>
-        <div id="cart-content">
-            <!-- Contenu du panier -->
-        </div>
-    </aside>
-    <img id="cart-teddy" src="images/cart-teddy.png">
-    <!--End Header -->
-
-    <main id="main" class="product-detail d-flex">
-        <div class="card d-flex flex-row col-md-8 mx-auto">
-            <div class="col-6">
-                <img class="col-12" id="product-picture" />
+    <main id="main" class="product-detail d-flex pt-3">
+        <div class="card d-flex flex-row flex-wrap col-sm-8 mx-auto text-center text-lg-left">
+            <div class="col-lg-6 align-self-center p-0">
+               <img class="col-12 p-0" id="product-picture" /></a>
             </div>
-            <div class="details col-6 align-self-center">
+            <div class="details col-12 col-lg-6 align-self-center p-xl-5">
                 <h1 id="product-title"></h1>
                 <p id="product-description"></p>
-                <div class="d-flex align-items-start">
+                <div class="d-flex flex-wrap align-items-start py-3 mt-3">
                     <h5 class="colors">Quantité :</h5>
                     <input id="quantity" class="quantity ml-4 pl-2" min="1" max="20" name="quantity" value="1"
                         type="number">
                 </div>
-                <div class="d-flex align-items-end">
+                <div class="d-flex flex-wrap align-items-end">
                     <h5 class="colors">Couleur(s) disponible(s) :</h5>
                     <select id="inputState" class="form-control ml-4"></select>
                 </div>
-                <h4 id="price" class="my-4"></h4>
-                <div class="action d-flex align-items-baseline">
-                    <button id="add-to-cart" class="add-to-cart btn btn-default py-2 h-100" type="button">Ajouter au
+                <h4 id="price" class="my-4 h3 font-weight-bold text-lg-left"></h4>
+                <div class="action d-flex flex-wrap flex-lg-nowrap align-items-baseline">
+                    <button id="add-to-cart" class="add-to-cart btn btn-default col-12 col-lg-4 py-2 h-100" type="button">Ajouter au
                         panier</button>
-                    <div class="alert alert-success text-center ml-4 my-0 py-2 w-100 d-none" id="alert-success">
+                    <div class="alert alert-success text-center col-12 col-lg mt-3 mt-lg-0 ml-lg-4 my-0 py-2 w-100 d-none" id="alert-success">
                     </div>
                 </div>
             </div>
