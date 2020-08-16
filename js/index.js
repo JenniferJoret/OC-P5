@@ -25,7 +25,7 @@ products(APITeddies).then(teddies => {
         teddyLink.href = "product.html?id=" + teddy._id;
         teddyLink.classList.add('btn');
         teddyLink.classList.add('btn-primary');
-        teddyLink.innerHTML = ' En savoir plus sur <br/> <i class="fas fa-paw"></i> ' + teddy.name + '  <i class="fas fa-paw"></i>';
+        teddyLink.innerHTML = ' En savoir plus sur <br/> <span class="fas fa-paw"></span>  ' + teddy.name + '  <span class="fas fa-paw"></span> ';
 
         //mise en place de la carte
         teddiesCards.appendChild(teddyCard);
