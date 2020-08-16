@@ -66,10 +66,6 @@ body {
   font-family: "Coming Soon", cursive;
 }
 
-p {
-  margin: auto;
-}
-
 ::selection {
   background: #6f4925;
   /* WebKit/Blink Browsers */
@@ -142,10 +138,9 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   font-weight: bold;
 }
 
-.navbar-brand img {
-  height: 2rem;
+.navbar-brand svg {
+  height: 2.2rem;
   width: auto;
-  fill: red;
   filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.7));
 }
 
@@ -226,14 +221,14 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 .hero-text {
-  min-height: 90vh;
+  min-height: 95vh;
   justify-content: space-around;
 }
 
 /*-----------------------------------*/
 section.info {
   border: 25px solid black;
-  border-image: url(../images/0.jpg) 100;
+  border-image: url(../images/wood-border.jpg) 100;
   background: #3a2614 url(../images/bg-repeat.png) fixed top;
 }
 
