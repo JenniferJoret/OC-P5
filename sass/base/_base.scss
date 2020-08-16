@@ -11,18 +11,15 @@ body {
 //changer la couleur lors du surlignage
 ::selection {
   background: $lightBrown;
-  /* WebKit/Blink Browsers */
   color: beige;
 }
 
 ::-moz-selection {
   background: #ffb7b7;
-  /* Gecko Browsers */
   color: beige;
 }
 
 input[type=number] {
-
   //toujours afficher les flèches sur les inputs number
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
@@ -45,7 +42,6 @@ input[type=number] {
 }
 
 .dropdown-item {
-
   &.active,
   &.dropdown-item:active,
   &.dropdown-item:focus,
