@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
@@ -24,6 +22,12 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
 
 
 
@@ -90,66 +94,33 @@
     <img id="cart-teddy" src="images/cart-teddy.png">
     <!--End Header -->
 
-    <main id="main" class="cart-content-detail d-flex py-5">
-        <div id="cart-bloc" class="container-fluid col-lg-8">
-            <div class="row">
-                <aside class="col">
-                    <div class="card mx-auto">
-                        <div class="table-responsive">
-                            <table class="table table-borderless table-shopping-cart">
-                                <thead class="text-muted">
-                                    <tr class="small text-uppercase">
-                                        <th scope="col">Produit</th>
-                                        <th scope="col" width="120">Quantité</th>
-                                        <th scope="col" width="120">Prix</th>
-                                        <th scope="col" width="60" class="text-center">Supprimer</th>
-                                    </tr>
-                                </thead>
-                                <tbody id='cart-body'>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </aside>
-                <aside class="top-cart-price-bloc w-100 col-xl-2 p-0 card w-content">
-                    <div class="bg-white cart-price-bloc card-body font-weight-bold p-4">
-                        <p class="d-flex justify-content-between">Prix total : <span id="total1"
-                                class=" font-weight-normal"></span></p>
-                        <p class="d-flex justify-content-between">Livraison : <span id="shipping"
-                                class="shipping text-success text-right font-weight-normal">Gratuite !</span></p>
-                        <p class="d-flex justify-content-between">Total : <span id="finalTotal" class="total"></span>
-                        </p>
-                        <hr>
-                        <a href="#" id="cart-buy" class="btn btn-out btn-success brown btn-square btn-main"> Passer
-                            commmande </a> <a href="index.html"
-                            class="btn btn-out btn-success btn-square btn-main mt-2">Continuer les achats</a>
-                    </div>
-                </aside>
+    <main id="main">
+        <section class="col-8 mx-auto pt-3">
+            <h1 class="my-5 text-center">MENTIONS LÉGALES</h1>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">ÉDITEUR DU SITE</h2>
+                <p>Orinous est une société par actions simplifiée au capital de (à remplir) euros, dont le siège social est (à remplir), immatriculée (à remplir) sous le numéro d’identification (à remplir) .</p>
             </div>
-        </div>
-        <div id="shipping-form" class="d-none bg-white p-3 p-md-5 mx-auto">
-            <h2 class="h1 pb-4 text-center">Informations de livraison</h2>
-            <form>
-                <label for="firstName">Prénom : </label>
-                <input type="text" id="firstName" name="firstName" required />
-                <br>
-                <label for="lastName">Nom : </label>
-                <input type="text" id="lastName" name="lastName" required />
-                <br>
-                <label for="address">Adresse : </label>
-                <input type="text" id="address" name="address" required />
-                <br>
-                <label for="city">Ville : </label>
-                <input type="text" id="city" name="city" required />
-                <br>
-                <label for="email">Email : </label>
-                <input type="email" id="email" name="email" required />
-                <div class="alert alert-warning text-center w-100 py-auto my-2 d-none" id="alert-warning">
-                </div>
-                <br>
-                <input type="submit" id="confirm" value="Valider" />
-            </form>
-        </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">HÉBERGEUR</h2>
+                <p>(à remplir)
+                </p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">NUMÉRO DE TVA INTRACOMMUNAUTAIRE</h2>
+                <p>(à remplir)
+                </p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">PROPRIÉTÉ INTELLECTUELLE</h2>
+                <p>Le site Internet à l'adresse (à remplir), ci-après dénommé la « Plateforme », et tous les droits qui lui sont rattachés sont la propriété exclusive de (à remplir) .
+                    La marque « (à remplir) » est une marque déposée et protégée. Toutes les marques, logos et autres signes distinctifs reproduits sur la Plateforme ainsi que sur les sites auxquels celui-ci permet l'accès quelle qu'en soit la manière, sont la propriété exclusive de (à remplir) et sont protégés à ce titre par les dispositions du Code de la Propriété Intellectuelle. Toute reproduction, représentation et/ou adaptation totale ou partielle, non autorisée de ces marques, logos et signes constitue une contrefaçon passible de sanctions civiles et pénales. En particulier, tous les logiciels utilisés sur la Plateforme et ses partenaires, ainsi que les images, textes et illustrations reproduits sur la Plateforme et ses partenaires sont protégés par le droit d'auteur et leur reproduction, représentation et/ou adaptation non autorisée constitue une contrefaçon passible de sanctions civiles et pénales.</p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">POUR TOUTE DEMANDE, ADRESSEZ VOS COURRIERS OU MAILS À</h2>
+                <p>(à remplir)</p>
+            </div>
+        </section>
     </main>
     <!--End #main -->
 
@@ -179,7 +150,6 @@
     </script>
     <script src="js/api.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/cart.js"></script>
 </body>
 
 </html>

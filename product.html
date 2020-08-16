@@ -39,60 +39,60 @@
 </head>
 
 <body id="content" class="wrapper d-flex flex-column m-0">
-  <!-- Page Content  -->
-  <nav class="navbar navbar-expand-md fixed-top px-0 px-md-5 justify-content-around" id="nav">
-    <button class="d-md-none btn btn-outline-light px-2" type="button" data-toggle="collapse"
-        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <i class="fas fa-paw"></i> Menu
-    </button>
-    <a class="navbar-brand m-0" href="index.html">
-        <img src="/images/logo.svg" alt="">
-    </a>
-    <div id="sidebarCollapse" class="d-flex justify-content-center order-md-1 ml-md-2">
-        <button type="button" class="btn btn-outline-light side-menu-btn px-2">
-            <i class="fas fa-shopping-cart pr-2"></i><span id="cart-amount">0</span>
+    <!-- Page Content  -->
+    <nav class="navbar navbar-expand-md fixed-top px-0 px-md-5 justify-content-around" id="nav">
+        <button class="d-md-none btn btn-outline-light px-2" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-paw"></i> Menu
         </button>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto px-3">
-            <li class="nav-item active">
-                <a class="nav-link active" href="index.html">Accueil <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Nos créations
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <ul class="list-unstyled" id="nav-teddies">
-                        <!-- Liens vers les pages d'oursons créés dynamiquement -->
-                    </ul>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="index.html#products">Tous nos oursons</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
-<!--End nav-menu -->
+        <a class="navbar-brand m-0" href="index.html">
+            <img src="/images/logo.svg" alt="Logo d'Orinours">
+        </a>
+        <div id="sidebarCollapse" class="d-flex justify-content-center order-md-1 ml-md-2">
+            <button type="button" class="btn btn-outline-light side-menu-btn px-2">
+                <i class="fas fa-shopping-cart pr-2"></i><span id="cart-amount">0</span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto px-3">
+                <li class="nav-item ">
+                    <a class="nav-link " href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Nos créations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="list-unstyled" id="nav-teddies">
+                            <!-- Liens vers les pages d'oursons créés dynamiquement -->
+                        </ul>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="index.html#products">Tous nos oursons</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--End nav-menu -->
 
 
-<aside id="sidebar">
-    <div class="sidebar-header h4 font-weight-bold p-4 mt-4 text-center">
-        <a class="cart" href="#">Panier</a>
-    </div>
-    <div id="cart-content">
-        <!-- Contenu du panier -->
-    </div>
-</aside>
-<img id="cart-teddy" src="images/cart-teddy.png">
-<!--End Header -->
+    <aside id="sidebar">
+        <div class="sidebar-header h4 font-weight-bold p-4 mt-4 text-center">
+            <a class="cart" href="#">Panier</a>
+        </div>
+        <div id="cart-content">
+            <!-- Contenu du panier -->
+        </div>
+    </aside>
+    <img id="cart-teddy" src="images/cart-teddy.png">
+    <!--End Header -->
 
     <main id="main" class="product-detail d-flex pt-3">
         <div class="card d-flex flex-row flex-wrap col-sm-8 mx-auto text-center text-lg-left">
             <div class="col-lg-6 align-self-center p-0">
-               <img class="col-12 p-0" id="product-picture" /></a>
+                <img class="col-12 p-0" id="product-picture" /></a>
             </div>
             <div class="details col-12 col-lg-6 align-self-center p-xl-5">
                 <h1 id="product-title"></h1>
@@ -108,9 +108,11 @@
                 </div>
                 <h4 id="price" class="my-4 h3 font-weight-bold text-lg-left"></h4>
                 <div class="action d-flex flex-wrap flex-lg-nowrap align-items-baseline">
-                    <button id="add-to-cart" class="add-to-cart btn btn-default col-12 col-lg-4 py-2 h-100" type="button">Ajouter au
+                    <button id="add-to-cart" class="add-to-cart btn btn-default col-12 col-lg-4 py-2 h-100"
+                        type="button">Ajouter au
                         panier</button>
-                    <div class="alert alert-success text-center col-12 col-lg mt-3 mt-lg-0 ml-lg-4 my-0 py-2 w-100 d-none" id="alert-success">
+                    <div class="alert alert-success text-center col-12 col-lg mt-3 mt-lg-0 ml-lg-4 my-0 py-2 w-100 d-none"
+                        id="alert-success">
                     </div>
                 </div>
             </div>
@@ -120,9 +122,14 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="footer footer-top  text-white p-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, ipsa accusantium unde nihil deleniti soluta
-            quibusdam accusamus nostrum placeat ducimus nesciunt dolorum quis aut, alias eveniet iusto non. Cumque, rem!
+        <div class="footer footer-top text-white py-3 col-12 d-flex flex-wrap text-center align-items-center">
+            <div class="col-md-6 order-md-2 pb-4 pb-md-0">
+                <h5>Les autres sites du groupe Orinoco : </h5>
+                <a href="#"><i class="fas fa-book-open px-2"></i>Oribook</a>
+                <a href="#"><i class="fas fa-tshirt px-2"></i>Oritextil</a>
+            </div>
+            <a href="cgv.html" class="col-sm-6 col-md-3 order-md-1 text-sm-left">Conditions générales de vente</a>
+            <a href="mentions-legales.html" class="col-sm-6 col-md-3 order-md-3 text-sm-right">Mentions légales</a>
         </div>
     </footer>
     <!--End Footer -->

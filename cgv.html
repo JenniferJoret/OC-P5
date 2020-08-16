@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+    <title>Orinours</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Nanum+Pen+Script&family=Sacramento&display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="content" class="wrapper d-flex flex-column m-0">
+    <!-- Page Content  -->
+    <nav class="navbar navbar-expand-md fixed-top px-0 px-md-5 justify-content-around" id="nav">
+        <button class="d-md-none btn btn-outline-light px-2" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-paw"></i> Menu
+        </button>
+        <a class="navbar-brand m-0" href="index.html">
+            <img src="/images/logo.svg" alt="Logo d'Orinours">
+        </a>
+        <div id="sidebarCollapse" class="d-flex justify-content-center order-md-1 ml-md-2">
+            <button type="button" class="btn btn-outline-light side-menu-btn px-2">
+                <i class="fas fa-shopping-cart pr-2"></i><span id="cart-amount">0</span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto px-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Nos créations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="list-unstyled" id="nav-teddies">
+                            <!-- Liens vers les pages d'oursons créés dynamiquement -->
+                        </ul>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="index.html#products">Tous nos oursons</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--End nav-menu -->
+
+
+    <aside id="sidebar">
+        <div class="sidebar-header h4 font-weight-bold p-4 mt-4 text-center">
+            <a class="cart" href="#">Panier</a>
+        </div>
+        <div id="cart-content">
+            <!-- Contenu du panier -->
+        </div>
+    </aside>
+    <img id="cart-teddy" src="images/cart-teddy.png">
+    <!--End Header -->
+
+    <main id="main">
+        <section class="col-8 mx-auto pt-3">
+            <h1 class="my-5 text-center">CONDITIONS GÉNÉRALES DE VENTE</h1>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">Clause n° 1 : Objet</h2>
+                <p>Les conditions générales de vente décrites ci-après détaillent les droits et obligations de la
+                    société ... (dénomination sociale) et de son client dans le cadre de la vente des marchandises
+                    suivantes : ... (le vendeur doit recenser les marchandises soumises aux CGV).</p>
+                <p>Toute prestation accomplie par la société ... (dénomination sociale) implique donc l'adhésion sans
+                    réserve de l'acheteur aux présentes conditions générales de vente.</p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">Clause n° 2 : Prix</h2>
+                <p>Les prix des marchandises vendues sont ceux en vigueur au jour de la prise de commande. Ils sont
+                    libellés en euros et calculés hors taxes. Par voie de conséquence, ils seront majorés du taux de TVA
+                    et des frais de transport applicables au jour de la commande.</p>
+                <p>La société ... (dénomination sociale) s'accorde le droit de modifier ses tarifs à tout moment.
+                    Toutefois, elle s'engage à facturer les marchandises commandées aux prix indiqués lors de
+                    l'enregistrement de la commande.
+                </p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">Clause n° 3 : Rabais et ristournes</h2>
+                <p>Les tarifs proposés comprennent les rabais et ristournes que la société ... (dénomination sociale)
+                    serait amenée à octroyer compte tenu de ses résultats ou de la prise en charge par l'acheteur de
+                    certaines prestations.
+                </p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">Clause n° 4 : Escompte</h2>
+                <p>Aucun escompte ne sera consenti en cas de paiement anticipé.</p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">Clause n° 5 : Modalités de paiement</h2>
+                <p>Le règlement des commandes s'effectue :
+                    <ul>
+                        <li>soit par carte bancaire ;</li>
+                        <li>par chèque ;</li>
+                        <li>le cas échéant, indiquer les autres moyens de paiement acceptés.</li>
+                    </ul>
+                </p>
+                <p>Lors de l'enregistrement de la commande, l'acheteur devra verser un acompte de 10% du montant global
+                    de la facture, le solde devant être payé à réception des marchandises.</p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">Clause n° 6 : Retard de paiement</h2>
+                <p>En cas de défaut de paiement total ou partiel des marchandises livrées au jour de la réception,
+                    l'acheteur doit verser à la société ... (dénomination sociale) une pénalité de retard égale à trois
+                    fois le taux de l'intérêt légal.</p>
+                <p>Le taux de l'intérêt légal retenu est celui en vigueur au jour de la livraison des marchandises.</p>
+                <p>A compter du 1er janvier 2015, le taux d'intérêt légal sera révisé tous les 6 mois (Ordonnance
+                    n°2014-947 du 20 août 2014).</p>
+                <p>Cette pénalité est calculée sur le montant TTC de la somme restant due, et court à compter de la date
+                    d'échéance du prix sans qu'aucune mise en demeure préalable ne soit nécessaire.</p>
+                <p>En sus des indemnités de retard, toute somme, y compris l’acompte, non payée à sa date d’exigibilité
+                    produira de plein droit le paiement d’une indemnité forfaitaire de 40 euros due au titre des frais
+                    de recouvrement.
+                </p>
+                <p>Articles 441-6, I alinéa 12 et D. 441-5 du code de commerce.</p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">Clause n° 7 : Clause résolutoire</h2>
+                <p>Si dans les quinze jours qui suivent la mise en oeuvre de la clause " Retard de paiement ",
+                    l'acheteur ne s'est pas acquitté des sommes restant dues, la vente sera résolue de plein droit et
+                    pourra ouvrir droit à l'allocation de dommages et intérêts au profit de la société ... (dénomination
+                    sociale).</p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">Clause n° 8 : Clause de réserve de propriété</h2>
+                <p>La société ... (dénomination sociale) conserve la propriété des biens vendus jusqu'au paiement
+                    intégral du prix, en principal et en accessoires. À ce titre, si l'acheteur fait l'objet d'un
+                    redressement ou d'une liquidation judiciaire, la société ... (dénomination sociale) se réserve le
+                    droit de revendiquer, dans le cadre de la procédure collective, les marchandises vendues et restées
+                    impayées.
+                </p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">Clause n° 9 : Livraison</h2>
+                <p>La livraison est effectuée :
+                    <ul>
+                        <li>par la remise directe de la marchandise à l'acheteur ;</li>
+                        <li>soit par l'envoi d'un avis de mise à disposition en magasin à l'attention de l'acheteur ;
+                        </li>
+                        <li>soit au lieu indiqué par l'acheteur sur le bon de commande.</li>
+                    </ul>
+                </p>
+                <p>Le délai de livraison indiqué lors de l'enregistrement de la commande n'est donné qu'à titre
+                    indicatif et n'est aucunement garanti.</p>
+                <p>Par voie de conséquence, tout retard raisonnable dans la livraison des produits ne pourra pas donner
+                    lieu au profit de l'acheteur à :
+                    <ul>
+                        <li>l'allocation de dommages et intérêts ;</li>
+                        <li>l'annulation de la commande.</li>
+                    </ul>
+                </p>
+                <p>Le risque du transport est supporté en totalité par l'acheteur.</p>
+                <p>En cas de marchandises manquantes ou détériorées lors du transport, l'acheteur devra formuler toutes
+                    les réserves nécessaires sur le bon de commande à réception desdites marchandises. Ces réserves
+                    devront être, en outre, confirmées par écrit dans les cinq jours suivant la livraison, par courrier
+                    recommandé AR.
+                </p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">Clause n° 10 : Force majeure</h2>
+                <p>La responsabilité de la société ... (dénomination sociale) ne pourra pas être mise en oeuvre si la
+                    non-exécution ou le retard dans l'exécution de l'une de ses obligations décrites dans les présentes
+                    conditions générales de vente découle d'un cas de force majeure. À ce titre, la force majeure
+                    s'entend de tout événement extérieur, imprévisible et irrésistible au sens de l'article 1148 du Code
+                    civil.</p>
+            </div>
+            <div class="col-10 my-5 mx-auto">
+                <h2 class="border-bottom text-center">Clause n° 11 : Tribunal compétent</h2>
+                <p>Tout litige relatif à l'interprétation et à l'exécution des présentes conditions générales de vente
+                    est soumis au droit français.</p>
+                <p>À défaut de résolution amiable, le litige sera porté devant le Tribunal de commerce ... (lieu du
+                    siège social).</p>
+            </div>
+        </section>
+    </main>
+    <!--End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer footer-top text-white py-3 col-12 d-flex flex-wrap text-center align-items-center">
+            <div class="col-md-6 order-md-2 pb-4 pb-md-0">
+                <h5>Les autres sites du groupe Orinoco : </h5>
+                <a href="#"><i class="fas fa-book-open px-2"></i>Oribook</a>
+                <a href="#"><i class="fas fa-tshirt px-2"></i>Oritextil</a>
+            </div>
+            <a href="cgv.html" class="col-sm-6 col-md-3 order-md-1 text-sm-left">Conditions générales de vente</a>
+            <a href="mentions-legales.html" class="col-sm-6 col-md-3 order-md-3 text-sm-right">Mentions légales</a>
+        </div>
+    </footer>
+    <!--End Footer -->
+
+    <!-- Vendor JS Files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="js/api.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+
+</html>
