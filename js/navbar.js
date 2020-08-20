@@ -94,14 +94,14 @@ $(document).ready(function () {
     });
 
     //margin du content en fonction de la taille de la navbar
-    var heightContent = $('#nav').height();
+    let heightContent = $('#nav').height();
     $('#sidebar, #main').css({
         marginTop: heightContent
     });
 
     //le main remplira toujours l'espace disponible
     function autoResizeDiv() {
-        var heightFooter = $('#footer').height();
+        let heightFooter = $('#footer').height();
         document.getElementById('main').style.minHeight = (window.innerHeight - heightFooter - heightContent) + 'px';
     }
     window.onresize = autoResizeDiv;
