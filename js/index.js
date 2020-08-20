@@ -7,21 +7,21 @@ products(APITeddies).then(teddies => {
         const teddiesNav = document.getElementById('nav-teddies');
 
         //création d'une carte pour chaque produit
-        let teddyCard = document.createElement('div');
+        const teddyCard = document.createElement('div');
         teddyCard.classList.add('card', 'text-center', 'col-10', 'col-md-5', 'col-xl-3');
-        let teddyPicture = document.createElement('img');
+        const teddyPicture = document.createElement('img');
         teddyPicture.classList.add('card-img-top');
         teddyPicture.src = teddy.imageUrl;
         teddyPicture.alt = "Photo de " + teddy.name;
-        let teddyInnerCard = document.createElement('div');
+        const teddyInnerCard = document.createElement('div');
         teddyInnerCard.classList.add('card-body', 'd-flex', 'flex-column', 'justify-content-between');
-        let teddyInnerTitle = document.createElement('h3');
+        const teddyInnerTitle = document.createElement('h3');
         teddyInnerTitle.classList.add('card-title', 'h3');
         teddyInnerTitle.innerText = teddy.name;
-        let teddyInnerDescription = document.createElement('p');
+        const teddyInnerDescription = document.createElement('p');
         teddyInnerDescription.classList.add('card-text');
         teddyInnerDescription.innerText = teddy.description;
-        let teddyLink = document.createElement('a');
+        const teddyLink = document.createElement('a');
         teddyLink.href = "product.html?id=" + teddy._id;
         teddyLink.classList.add('btn');
         teddyLink.classList.add('btn-primary');
