@@ -49,15 +49,15 @@ function getCartDetail() {
 //Mise en place des oursons dans le dropdown de la navbar
 products(APITeddies).then(teddies => {
     teddies.forEach(teddy => {
-            const teddiesNav = document.getElementById('nav-teddies');
-            //création des éléments de liste pour la barre de navigation
-            let teddyLi = document.createElement('li');
-            let teddyLiLink = document.createElement('a');
-            teddyLiLink.classList.add('dropdown-item');
-            teddyLiLink.href = "product.html?id=" + teddy._id;
-            teddyLiLink.innerText = teddy.name;
-            teddiesNav.appendChild(teddyLi);
-            teddyLi.appendChild(teddyLiLink);
+        const teddiesNav = document.getElementById('nav-teddies');
+        //création des éléments de liste pour la barre de navigation
+        let teddyLi = document.createElement('li');
+        let teddyLiLink = document.createElement('a');
+        teddyLiLink.classList.add('dropdown-item');
+        teddyLiLink.href = "product.html?id=" + teddy._id;
+        teddyLiLink.innerText = teddy.name;
+        teddiesNav.appendChild(teddyLi);
+        teddyLi.appendChild(teddyLiLink);
     })
 });
 
@@ -77,20 +77,17 @@ if (localStorage.cartItems) {
 
 
 //GESTION DU COMPORTEMENT DE LA PAGE (NAVBAR, SIDEBAR, ET CONTENU DE LA PAGE)
-$(document).ready(function () {
+$(document).ready(function (e) {
     //afficher et masquer la sidebar
-    $(function () {
-        $("#sidebarCollapse").on("click", function (e) {
-            $('#sidebar, #content, #footer, #cart-teddy').toggleClass('active');
-            $('.collapse.in').toggleClass('in');
-            $("#nav").find('.collapse.show').collapse('hide');
-            e.stopPropagation();
-        });
-        $(document).on("click", function (e) {
-            if ($(e.target).is("#sidebar *") === false) {
-                $('#sidebar, #content ,#footer, #cart-teddy').removeClass('active');
-            }
-        });
+    $("#sidebarCollapse").on("click", function (e) {
+        $('#sidebar, #content, #footer, #cart-teddy').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $("#nav").find('.collapse.show').collapse('hide');
+        e.stopPropagation();
+    });
+
+    $(".cart-cross, #nav>button").click(function () {
+        $('#sidebar, #content ,#footer, #cart-teddy').removeClass('active');
     });
 
     //margin du content en fonction de la taille de la navbar

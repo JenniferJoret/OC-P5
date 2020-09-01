@@ -38,11 +38,11 @@ Le site Orinours contient à ce jour, 6 pages.
 
 
 - Chaque page contient une barre de navigation, composée d'un logo, deux liens ramenant à l'accueil, un lien vers les pages produits (créés dynamiquement) ou vers l'ancre des produits de l'accueil, et un bouton permettant d'afficher le panier en side. 
-- Et chaque page contient également un footer, composé d'un lien vers les mentions légales du site, un lien vers les conditions générales de vente, un lien vers Oribook, et un autre vers Oritextil
+- Et chaque page contient également un footer, composé d'un lien vers les mentions légales du site, un lien vers les conditions générales de vente, un lien vers Oribook, et un autre vers Oritextil.
 
 ## CARACTÉRISTIQUES TECHNIQUES
 
-Le site a été réalisé avec **HTML5**, **CSS3**, **JavaScript** / **SASS**, **BOOTSTRAP 4** et **jQuery**
+Le site a été réalisé avec **HTML5**, **CSS3**, **JavaScript** / **SASS**, **BOOTSTRAP 4** , **jQuery** et **FontaAwesome**.
 
 
 ## COMPATIBILITÉ
