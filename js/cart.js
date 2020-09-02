@@ -4,6 +4,7 @@ let confirmShipping = document.getElementById("confirm");
 let alertWarning = document.getElementById('alert-warning');
 let form = document.querySelector('form');
 let cartBuyBtn = document.getElementById("cart-buy");
+let total = 0;
 let i = 0;
 
 let shippingContent = {
@@ -35,7 +36,6 @@ const sendCart = async () => {
 if (localStorage.cartItems) {
     //On récupère le contenu du panier
     const cartItems = JSON.parse(localStorage.cartItems);
-    let total = 0;
     //et pour chaque objet, on affiche une ligne dans le panier
     cartItems.forEach(cartItem => {
         total = total + parseInt(cartItem.price);
@@ -119,5 +119,5 @@ form.addEventListener("submit", async (e) => {
     //envoi de la commande au serveur
     const response = await sendCart();
     //et on redirige vers la page de confirmation en affichant le prénom et le n° de commande
-    window.location = `./confirmation.html?id=${response.orderId}&user=${firstName.value}`;
+    window.location = `./confirmation.html?id=${response.orderId}&user=${firstName.value}&total=${total}`;
 })

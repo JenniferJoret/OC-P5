@@ -3,6 +3,7 @@ const urlParams = new URLSearchParams(queryString);
 //on récupère les données en URL
 orderNameInner = urlParams.get('user');
 orderIDInner = urlParams.get('id');
+orderPriceInner = urlParams.get('total');
 
 //GESTION DE LA CONFIRMATION
 if (orderIDInner == null || orderNameInner == null) {
@@ -18,5 +19,7 @@ if (orderIDInner == null || orderNameInner == null) {
     orderName.innerText = orderNameInner;
     const orderID = document.getElementById('orderNumber');
     orderID.innerText = orderIDInner;
+    const orderPrice = document.getElementById('total');
+    orderPrice.innerText = orderPriceInner + " €";
     localStorage.removeItem("cartItems");
 }
