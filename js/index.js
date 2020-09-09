@@ -1,10 +1,9 @@
-//GESTION DE L'AFFICHAGES DES DIFFERENTS PRODUITS PRESENTS DANS L'API
+//GESTION DE L'AFFICHAGE SUR L'ACCUEIL DES DIFFERENTS PRODUITS PRESENTS DANS L'API
 
 products(APITeddies).then(teddies => {
     teddies.forEach(teddy => {
 
         const teddiesCards = document.getElementById('teddiesCards');
-        const teddiesNav = document.getElementById('nav-teddies');
 
         //création d'une carte pour chaque produit
         const teddyCard = document.createElement('div');

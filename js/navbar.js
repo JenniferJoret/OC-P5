@@ -17,6 +17,7 @@ function getCartDetail() {
     let total = 0;
     cartContent.innerHTML = "";
     let productUl = document.createElement("ul");
+
     cartItems.forEach(cartItem => {
         total = total + parseInt(cartItem.price);
         //création des éléments du panier en side
@@ -34,6 +35,7 @@ function getCartDetail() {
         productLi.appendChild(productLiLink);
         productLi.appendChild(productPrice);
     })
+    
     let totalPrice = document.createElement('p');
     totalPrice.classList.add('text-center', 'h4', 'py-4');
     totalPrice.innerText = "Total : " + total + " €";
@@ -44,6 +46,8 @@ function getCartDetail() {
     cartContent.appendChild(totalPrice);
     cartContent.appendChild(cartButton);
 }
+
+
 
 
 //Mise en place des oursons dans le dropdown de la navbar
@@ -63,7 +67,7 @@ products(APITeddies).then(teddies => {
 
 
 //GESTION DU PANIER SIDEBAR
-//Si local storage, on liste les articles dans la sidebar
+//Si local storage, on liste les articles dans la sidebar et on change le nombre en haut
 if (localStorage.cartItems) {
     getNavCount();
     getCartDetail();

@@ -65,6 +65,7 @@ products(APITeddies).then(teddy => {
                 }
                 i++;
             }
+            //sinon, on crée un nouvel objet
             if (isInArray == false) {
                 cartItems.push(product);
             }

@@ -42,7 +42,7 @@ Le site Orinours contient à ce jour, 6 pages.
 
 ## CARACTÉRISTIQUES TECHNIQUES
 
-Le site a été réalisé avec **HTML5**, **CSS3**, **JavaScript** / **SASS**, **BOOTSTRAP 4** , **jQuery** et **FontaAwesome**.
+Le site a été réalisé avec **HTML5**, **CSS3**, **JavaScript** / **SASS**, **BOOTSTRAP 4** , **jQuery** et **FontAwesome**.
 
 
 ## COMPATIBILITÉ
