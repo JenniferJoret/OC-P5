@@ -23,6 +23,8 @@ products(APITeddies).then(teddy => {
 
     // Mise en place des informations du produit
     productName.innerText = teddy.name;
+
+    productPicture.innerHTML = '<img class="col-12 p-0" id="product-picture" src="'+ teddy.imageUrl + '" alt="Photo de ' + teddy.name + '"/>';
     productPicture.src = teddy.imageUrl;
     productDescription.innerText = teddy.description;
     productPrice.innerText = teddy.price / 100 + " €";
