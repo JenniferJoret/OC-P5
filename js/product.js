@@ -4,7 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 const product = urlParams.get('id')
 
 //Modification de l'URL de l'API (ajout de l'ID)
-var APITeddies = "http://localhost:3000/api/teddies/" + product;
+var APITeddies = "/api/teddies/" + product;
 
 
 //GESTION DE LA PAGE PRODUIT

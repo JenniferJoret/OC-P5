@@ -1,4 +1,4 @@
-var APITeddies = "http://localhost:3000/api/teddies";
+var APITeddies = "/api/teddies";
 
 //Appel asynchrone de l'API
 async function products(url) {

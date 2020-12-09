@@ -20,7 +20,7 @@ function validateEmail(mail) {
 
 // fonction d'envoi des données à l'api
 const sendCart = async () => {
-    const response = await fetch("http://localhost:3000/api/teddies/order", {
+    const response = await fetch("/api/teddies/order", {
         headers: {
             "Content-Type": "application/json",
         },
